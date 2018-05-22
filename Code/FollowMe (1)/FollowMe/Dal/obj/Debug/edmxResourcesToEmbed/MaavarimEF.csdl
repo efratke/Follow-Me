@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaavarimjerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MaavarimjerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="T_Tpisot" EntityType="MaavarimjerModel.T_Tpisot" />
+    <FunctionImport Name="Spp_SearchMaavarByCriteria" ReturnType="Collection(MaavarimjerModel.Spp_SearchMaavarByCriteria_Result)">
+      <Parameter Name="KodMaavar" Mode="In" Type="Int32" />
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Spp_SearchMaavarByDate" ReturnType="Collection(MaavarimjerModel.Spp_SearchMaavarByDate_Result)">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Spp_GetTimeAvgByMaavarID" ReturnType="Collection(MaavarimjerModel.Spp_GetTimeAvgByMaavarID_Result)">
+      <Parameter Name="Maavar_IDs" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Spp_GetEruimByMaavarID" ReturnType="Collection(MaavarimjerModel.Spp_GetEruimByMaavarID_Result)">
+      <Parameter Name="Maavar_IDs" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Spp_GetTpisotByMaavarID" ReturnType="Collection(MaavarimjerModel.Spp_GetTpisotByMaavarID_Result)">
+      <Parameter Name="Maavar_IDs" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="T_Person" EntityType="MaavarimjerModel.T_Person" />
+    <FunctionImport Name="Spp_RemoveItemByIDs">
+      <Parameter Name="TableName" Mode="In" Type="String" />
+      <Parameter Name="IDs" Mode="In" Type="String" />
+      <Parameter Name="MaavarID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Spp_GetPersonByMaavarID" ReturnType="Collection(MaavarimjerModel.Spp_GetPersonByMaavarID_Result)">
+      <Parameter Name="Maavar_IDs" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Spp_GetSumMaavarByDate" ReturnType="Collection(MaavarimjerModel.Spp_GetSumMaavarByDate_Result)">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Spp_GetSumTimeAvgByDate" ReturnType="Collection(MaavarimjerModel.Spp_GetSumTimeAvgByDate_Result)">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Spp_GetSumTpisotByDate" ReturnType="Collection(MaavarimjerModel.Spp_GetSumTpisotByDate_Result)">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Spp_GetEruimByDate" ReturnType="Collection(MaavarimjerModel.Spp_GetEruimByDate_Result)">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="T_Eruim" EntityType="MaavarimjerModel.T_Eruim" />
+    <EntitySet Name="T_Maavarim" EntityType="MaavarimjerModel.T_Maavarim" />
+    <EntitySet Name="T_Time_Avg" EntityType="MaavarimjerModel.T_Time_Avg" />
+  </EntityContainer>
+  <EntityType Name="T_Tpisot">
+    <Key>
+      <PropertyRef Name="Tpisa_ID" />
+    </Key>
+    <Property Name="Tpisa_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Maavar_ID" Type="Int32" Nullable="false" />
+    <Property Name="Kod_Tpisa" Type="Int32" />
+    <Property Name="Tpisa_count" Type="Int32" />
+    <Property Name="Tpisa_comment" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="Spp_SearchMaavarByCriteria_Result">
+    <Property Type="Int32" Name="Maavar_ID" Nullable="false" />
+    <Property Type="Int32" Name="KodMaavar" Nullable="false" />
+    <Property Type="Int32" Name="Gizra_ID" Nullable="false" />
+    <Property Type="DateTime" Name="Acivity_Date" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Israel_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tourist_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Palastaine_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Deplomat_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Un_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Vip_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Israel_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tourist_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Palastaine_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Deplomat_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Un_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Vip_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Israel_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Deplomat_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Ambulance_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bus_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Transport_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Un_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Vip_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Israel_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Deplomat_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Ambulance_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bus_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Transport_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Un_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Vip_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Merihan_count" Nullable="true" />
+    <Property Type="Int32" Name="Siyur_count" Nullable="true" />
+    <Property Type="Int32" Name="Arrest_Count" Nullable="true" />
+    <Property Type="Int32" Name="Sadach_Count" Nullable="true" />
+    <Property Type="Int32" Name="Hablan_Count" Nullable="true" />
+    <Property Type="Int32" Name="Calban_Count" Nullable="true" />
+    <Property Type="Int32" Name="Delay_Count" Nullable="true" />
+    <Property Type="Int32" Name="Charig_Count" Nullable="true" />
+    <Property Type="Int32" Name="Hapsad_Count" Nullable="true" />
+    <Property Type="Int32" Name="Rechev_check_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Psm_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Psila_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Td_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Bet_Mishpat_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Cars_Down_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_license_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Reports_count" Nullable="true" />
+    <Property Type="Int32" Name="Biometry_count" Nullable="true" />
+    <Property Type="Int32" Name="Biometry_Success_count" Nullable="true" />
+    <Property Type="Int32" Name="Biometry_Harabs_Count" Nullable="true" />
+    <Property Type="Int32" Name="Exercise_Count" Nullable="true" />
+    <Property Type="Int32" Name="Exercise_Success_count" Nullable="true" />
+    <Property Type="Int32" Name="Exercise_Failed_count" Nullable="true" />
+    <Property Type="String" Name="Exercise_Commants" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="Alef_blue_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Security_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Matak_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Mz_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Magav_count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Else_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_blue_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Security_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Matak_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Mz_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Magav_count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Else_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_blue_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Security_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Matak_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Mz_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Magav_count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Else_Count" Nullable="true" />
+    <Property Type="String" Name="General_Comment" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="Spp_SearchMaavarByDate_Result">
+    <Property Type="Int32" Name="Maavar_ID" Nullable="false" />
+    <Property Type="Int32" Name="KodMaavar" Nullable="false" />
+    <Property Type="Int32" Name="Gizra_ID" Nullable="false" />
+    <Property Type="DateTime" Name="Acivity_Date" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Israel_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tourist_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Palastaine_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Deplomat_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Un_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Vip_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Israel_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tourist_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Palastaine_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Deplomat_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Un_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Vip_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Israel_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Deplomat_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Ambulance_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bus_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Transport_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Un_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Vip_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Israel_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Deplomat_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Ambulance_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bus_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Transport_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Un_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Vip_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Merihan_count" Nullable="true" />
+    <Property Type="Int32" Name="Siyur_count" Nullable="true" />
+    <Property Type="Int32" Name="Arrest_Count" Nullable="true" />
+    <Property Type="Int32" Name="Sadach_Count" Nullable="true" />
+    <Property Type="Int32" Name="Hablan_Count" Nullable="true" />
+    <Property Type="Int32" Name="Calban_Count" Nullable="true" />
+    <Property Type="Int32" Name="Delay_Count" Nullable="true" />
+    <Property Type="Int32" Name="Charig_Count" Nullable="true" />
+    <Property Type="Int32" Name="Hapsad_Count" Nullable="true" />
+    <Property Type="Int32" Name="Rechev_check_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Psm_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Psila_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Td_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Bet_Mishpat_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Cars_Down_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_license_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Reports_count" Nullable="true" />
+    <Property Type="Int32" Name="Biometry_count" Nullable="true" />
+    <Property Type="Int32" Name="Biometry_Success_count" Nullable="true" />
+    <Property Type="Int32" Name="Biometry_Harabs_Count" Nullable="true" />
+    <Property Type="Int32" Name="Exercise_Count" Nullable="true" />
+    <Property Type="Int32" Name="Exercise_Success_count" Nullable="true" />
+    <Property Type="Int32" Name="Exercise_Failed_count" Nullable="true" />
+    <Property Type="String" Name="Exercise_Commants" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="Alef_blue_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Security_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Matak_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Mz_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Magav_count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Else_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_blue_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Security_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Matak_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Mz_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Magav_count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Else_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_blue_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Security_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Matak_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Mz_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Magav_count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Else_Count" Nullable="true" />
+    <Property Type="String" Name="General_Comment" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Kod_Maavar" Nullable="false" />
+    <Property Type="String" Name="Shem_Maavar" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Kod_Gizra" Nullable="true" />
+    <Property Type="String" Name="Shem_Gizra" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="Spp_GetTimeAvgByMaavarID_Result">
+    <Property Type="Int32" Name="TimeAvg_ID" Nullable="false" />
+    <Property Type="Int32" Name="Maavar_ID" Nullable="false" />
+    <Property Type="String" Name="Acivity_Date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Hour_Check" Nullable="true" MaxLength="5" />
+    <Property Type="Int32" Name="Avg_Car_count" Nullable="true" />
+    <Property Type="Int32" Name="Avg_Leg_count" Nullable="true" />
+    <Property Type="String" Name="Shem_Maavar" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="Spp_GetEruimByMaavarID_Result">
+    <Property Type="Int32" Name="Erua_ID" Nullable="false" />
+    <Property Type="Int32" Name="Maavar_ID" Nullable="false" />
+    <Property Type="Int32" Name="Kod_Erua" Nullable="true" />
+    <Property Type="Time" Name="Erua_Hour" Nullable="true" />
+    <Property Type="Int32" Name="Erua_count" Nullable="true" />
+    <Property Type="String" Name="Shem_Erua" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Shem_Maavar" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Erua_comment" Nullable="true" MaxLength="400" />
+  </ComplexType>
+  <ComplexType Name="Spp_GetTpisotByMaavarID_Result">
+    <Property Type="Int32" Name="Tpisa_ID" Nullable="false" />
+    <Property Type="Int32" Name="Maavar_ID" Nullable="false" />
+    <Property Type="Int32" Name="Kod_Tpisa" Nullable="true" />
+    <Property Type="Int32" Name="Tpisa_count" Nullable="true" />
+    <Property Type="String" Name="Shem_Tpisa" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Shem_Maavar" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Tpisa_comment" Nullable="true" MaxLength="400" />
+  </ComplexType>
+  <EntityType Name="T_Person">
+    <Key>
+      <PropertyRef Name="Person_ID" />
+    </Key>
+    <Property Name="Person_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Maavar_ID" Type="Int32" />
+    <Property Name="Hour_Pass" Type="Time" Precision="0" />
+    <Property Name="Person_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="Spp_GetPersonByMaavarID_Result">
+    <Property Type="Int32" Name="Person_ID" Nullable="false" />
+    <Property Type="Int32" Name="Maavar_ID" Nullable="true" />
+    <Property Type="String" Name="Acivity_Date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Hour_Pass" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="Person_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Shem_Maavar" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="Spp_GetSumMaavarByDate_Result">
+    <Property Type="String" Name="Shem_Maavar" Nullable="true" MaxLength="43" />
+    <Property Type="Int32" Name="KodMaavar" Nullable="false" />
+    <Property Type="Int32" Name="Israel_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tourist_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Palastaine_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Deplomat_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Un_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Vip_Leg_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Israel_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tourist_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Palastaine_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Deplomat_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Un_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Vip_Leg_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Israel_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Deplomat_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Ambulance_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bus_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Transport_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Un_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Vip_Car_Entry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Israel_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Deplomat_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Ambulance_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bus_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Transport_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Un_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Vip_Car_Out_Count" Nullable="true" />
+    <Property Type="Int32" Name="Merihan_Count" Nullable="true" />
+    <Property Type="Int32" Name="Siyur_Count" Nullable="true" />
+    <Property Type="Int32" Name="Arrest_Count" Nullable="true" />
+    <Property Type="Int32" Name="Sadach_Count" Nullable="true" />
+    <Property Type="Int32" Name="Hablan_Count" Nullable="true" />
+    <Property Type="Int32" Name="Calban_Count" Nullable="true" />
+    <Property Type="Int32" Name="Delay_Count" Nullable="true" />
+    <Property Type="Int32" Name="Charig_Count" Nullable="true" />
+    <Property Type="Int32" Name="Hapsad_Count" Nullable="true" />
+    <Property Type="Int32" Name="Rechev_check_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Psm_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Psila_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Td_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Bet_Mishpat_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Cars_Down_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_license_Count" Nullable="true" />
+    <Property Type="Int32" Name="Tenua_Reports_Count" Nullable="true" />
+    <Property Type="Int32" Name="Biometry_Count" Nullable="true" />
+    <Property Type="Int32" Name="Biometry_Success_Count" Nullable="true" />
+    <Property Type="Int32" Name="Biometry_Harabs_Count" Nullable="true" />
+    <Property Type="Int32" Name="Exercise_Count" Nullable="true" />
+    <Property Type="Int32" Name="Exercise_Success_Count" Nullable="true" />
+    <Property Type="Int32" Name="Exercise_Failed_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_blue_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Security_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Matak_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Mz_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Magav_Count" Nullable="true" />
+    <Property Type="Int32" Name="Alef_Else_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_blue_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Security_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Matak_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Mz_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Magav_Count" Nullable="true" />
+    <Property Type="Int32" Name="Bait_Else_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_blue_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Security_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Matak_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Mz_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Magav_Count" Nullable="true" />
+    <Property Type="Int32" Name="Gimel_Else_Count" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Spp_GetSumTimeAvgByDate_Result">
+    <Property Type="String" Name="Shem_Maavar" Nullable="true" MaxLength="43" />
+    <Property Type="Int32" Name="KodMaavar" Nullable="false" />
+    <Property Type="Int32" Name="Avg_Car_count" Nullable="true" />
+    <Property Type="Int32" Name="Avg_Leg_count" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Spp_GetSumTpisotByDate_Result">
+    <Property Type="String" Name="Shem_Maavar" Nullable="true" MaxLength="43" />
+    <Property Type="String" Name="Shem_Tpisa" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="KodMaavar" Nullable="false" />
+    <Property Type="Int32" Name="Kod_Tpisa" Nullable="true" />
+    <Property Type="Int32" Name="Tpisa_count" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Spp_GetEruimByDate_Result">
+    <Property Type="String" Name="Shem_Maavar" Nullable="true" MaxLength="43" />
+    <Property Type="Int32" Name="Maavar_ID" Nullable="false" />
+    <Property Type="Int32" Name="Kod_Erua" Nullable="true" />
+    <Property Type="Time" Name="Erua_Hour" Nullable="true" />
+    <Property Type="Int32" Name="Erua_count" Nullable="true" />
+    <Property Type="String" Name="Shem_Erua" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Erua_comment" Nullable="true" MaxLength="400" />
+  </ComplexType>
+  <EntityType Name="T_Eruim">
+    <Key>
+      <PropertyRef Name="Erua_ID" />
+    </Key>
+    <Property Name="Erua_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Maavar_ID" Type="Int32" Nullable="false" />
+    <Property Name="Kod_Erua" Type="Int32" />
+    <Property Name="Erua_Hour" Type="Time" Precision="0" />
+    <Property Name="Erua_count" Type="Int32" />
+    <Property Name="Erua_comment" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="T_Maavarim">
+    <Key>
+      <PropertyRef Name="KodMaavar" />
+      <PropertyRef Name="Acivity_Date" />
+    </Key>
+    <Property Name="Maavar_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KodMaavar" Type="Int32" Nullable="false" />
+    <Property Name="Gizra_ID" Type="Int32" Nullable="false" />
+    <Property Name="Acivity_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Israel_Leg_Entry_Count" Type="Int32" />
+    <Property Name="Tourist_Leg_Entry_Count" Type="Int32" />
+    <Property Name="Palastaine_Leg_Entry_Count" Type="Int32" />
+    <Property Name="Deplomat_Leg_Entry_Count" Type="Int32" />
+    <Property Name="Un_Leg_Entry_Count" Type="Int32" />
+    <Property Name="Vip_Leg_Entry_Count" Type="Int32" />
+    <Property Name="Israel_Leg_Out_Count" Type="Int32" />
+    <Property Name="Tourist_Leg_Out_Count" Type="Int32" />
+    <Property Name="Palastaine_Leg_Out_Count" Type="Int32" />
+    <Property Name="Deplomat_Leg_Out_Count" Type="Int32" />
+    <Property Name="Un_Leg_Out_Count" Type="Int32" />
+    <Property Name="Vip_Leg_Out_Count" Type="Int32" />
+    <Property Name="Israel_Car_Entry_Count" Type="Int32" />
+    <Property Name="Deplomat_Car_Entry_Count" Type="Int32" />
+    <Property Name="Ambulance_Car_Entry_Count" Type="Int32" />
+    <Property Name="Bus_Car_Entry_Count" Type="Int32" />
+    <Property Name="Transport_Car_Entry_Count" Type="Int32" />
+    <Property Name="Un_Car_Entry_Count" Type="Int32" />
+    <Property Name="Vip_Car_Entry_Count" Type="Int32" />
+    <Property Name="Israel_Car_Out_Count" Type="Int32" />
+    <Property Name="Deplomat_Car_Out_Count" Type="Int32" />
+    <Property Name="Ambulance_Car_Out_Count" Type="Int32" />
+    <Property Name="Bus_Car_Out_Count" Type="Int32" />
+    <Property Name="Transport_Car_Out_Count" Type="Int32" />
+    <Property Name="Un_Car_Out_Count" Type="Int32" />
+    <Property Name="Vip_Car_Out_Count" Type="Int32" />
+    <Property Name="Merihan_count" Type="Int32" />
+    <Property Name="Siyur_count" Type="Int32" />
+    <Property Name="Arrest_Count" Type="Int32" />
+    <Property Name="Sadach_Count" Type="Int32" />
+    <Property Name="Hablan_Count" Type="Int32" />
+    <Property Name="Calban_Count" Type="Int32" />
+    <Property Name="Delay_Count" Type="Int32" />
+    <Property Name="Charig_Count" Type="Int32" />
+    <Property Name="Hapsad_Count" Type="Int32" />
+    <Property Name="Rechev_check_Count" Type="Int32" />
+    <Property Name="Tenua_Psm_Count" Type="Int32" />
+    <Property Name="Tenua_Psila_Count" Type="Int32" />
+    <Property Name="Tenua_Td_Count" Type="Int32" />
+    <Property Name="Tenua_Bet_Mishpat_Count" Type="Int32" />
+    <Property Name="Tenua_Cars_Down_Count" Type="Int32" />
+    <Property Name="Tenua_license_Count" Type="Int32" />
+    <Property Name="Tenua_Reports_count" Type="Int32" />
+    <Property Name="Biometry_count" Type="Int32" />
+    <Property Name="Biometry_Success_count" Type="Int32" />
+    <Property Name="Biometry_Harabs_Count" Type="Int32" />
+    <Property Name="Exercise_Count" Type="Int32" />
+    <Property Name="Exercise_Success_count" Type="Int32" />
+    <Property Name="Exercise_Failed_count" Type="Int32" />
+    <Property Name="Exercise_Commants" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Alef_blue_Count" Type="Int32" />
+    <Property Name="Alef_Security_Count" Type="Int32" />
+    <Property Name="Alef_Matak_Count" Type="Int32" />
+    <Property Name="Alef_Mz_Count" Type="Int32" />
+    <Property Name="Alef_Magav_count" Type="Int32" />
+    <Property Name="Alef_Else_Count" Type="Int32" />
+    <Property Name="Bait_blue_Count" Type="Int32" />
+    <Property Name="Bait_Security_Count" Type="Int32" />
+    <Property Name="Bait_Matak_Count" Type="Int32" />
+    <Property Name="Bait_Mz_Count" Type="Int32" />
+    <Property Name="Bait_Magav_count" Type="Int32" />
+    <Property Name="Bait_Else_Count" Type="Int32" />
+    <Property Name="Gimel_blue_Count" Type="Int32" />
+    <Property Name="Gimel_Security_Count" Type="Int32" />
+    <Property Name="Gimel_Matak_Count" Type="Int32" />
+    <Property Name="Gimel_Mz_Count" Type="Int32" />
+    <Property Name="Gimel_Magav_count" Type="Int32" />
+    <Property Name="Gimel_Else_Count" Type="Int32" />
+    <Property Name="General_Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="T_Time_Avg">
+    <Key>
+      <PropertyRef Name="TimeAvg_ID" />
+    </Key>
+    <Property Name="TimeAvg_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Maavar_ID" Type="Int32" />
+    <Property Name="Acivity_Date" Type="DateTime" Precision="3" />
+    <Property Name="Hour_Check" Type="Time" Precision="0" />
+    <Property Name="Avg_Car_count" Type="Int32" />
+    <Property Name="Avg_Leg_count" Type="Int32" />
+  </EntityType>
+</Schema>

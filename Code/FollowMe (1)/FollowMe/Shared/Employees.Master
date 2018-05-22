@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Shared/masterPage.Master" CodeBehind="Employees.Master.cs" Inherits="FollowMe.Shared.Employees" %>
+
+<asp:Content ID="Content_m1" ContentPlaceHolderID="head_" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<%--<body id="Body1" runat="server" class="body">
+    <asp:Image ID="imgBack" runat="server" ImageUrl="../Images/backgroundOpac.jpg" />--%>
+<asp:Content ID="Content_m2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+
+  <%--  <form id="Form1" runat="server">
+        <div id="framecontentTop">
+            <asp:Image ID="Image1" runat="server" ImageUrl="../Images/aka_logo.jpg" ImageAlign="Right"
+                Width="300px" Height="150px" />
+            <asp:Image ID="Image2" runat="server" ImageUrl="../Images/Title.png" ImageAlign="Left" Width="300px" Height="150px" />
+ --%>           <div class="clear hideSkiplink" style="left: auto; top: 200px">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="animatedtabs" EnableViewState="false"
+                    IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home" />
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About" />
+                        <asp:MenuItem NavigateUrl="../Forms/Owners.aspx" Text="Customers" />
+                 <asp:MenuItem NavigateUrl="~/FollowMe.aspx" Text="Follow" />
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div id="maincontent">
+            <center>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+        </center>
+        </div>
+    </asp:Content>
+ <%--   </form>--%>
+<%--</html>--%>
+
+
+
+
+<%--                <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home" />
+                <asp:MenuItem NavigateUrl="~/About.aspx" Text="About" />
+                <asp:MenuItem NavigateUrl="~/Tags.aspx" Text="Orders" />
+                <asp:MenuItem NavigateUrl="~/connect.aspx" Text="Start up" />
+                <asp:MenuItem NavigateUrl="~/Owners.aspx" Text="Customers" />
+                <asp:MenuItem NavigateUrl="~/Login.aspx" Text="Login" />--%>
+            

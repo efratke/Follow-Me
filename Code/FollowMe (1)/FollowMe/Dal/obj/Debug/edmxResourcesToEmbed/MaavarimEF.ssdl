@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaavarimjerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Maavarimjer.dbo.Colors' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Colors">
+          <Property Name="ColorId" Type="int" />
+          <Property Name="Name" Type="varchar(max)" />
+        </EntityType>-->
+  <EntityType Name="T_Eruim">
+    <Key>
+      <PropertyRef Name="Erua_ID" />
+    </Key>
+    <Property Name="Erua_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Maavar_ID" Type="int" Nullable="false" />
+    <Property Name="Kod_Erua" Type="int" />
+    <Property Name="Erua_Hour" Type="time" Precision="0" />
+    <Property Name="Erua_count" Type="int" />
+    <Property Name="Erua_comment" Type="varchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="T_Maavarim">
+    <Key>
+      <PropertyRef Name="KodMaavar" />
+      <PropertyRef Name="Acivity_Date" />
+    </Key>
+    <Property Name="Maavar_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KodMaavar" Type="int" Nullable="false" />
+    <Property Name="Gizra_ID" Type="int" Nullable="false" />
+    <Property Name="Acivity_Date" Type="datetime" Nullable="false" />
+    <Property Name="Israel_Leg_Entry_Count" Type="int" />
+    <Property Name="Tourist_Leg_Entry_Count" Type="int" />
+    <Property Name="Palastaine_Leg_Entry_Count" Type="int" />
+    <Property Name="Deplomat_Leg_Entry_Count" Type="int" />
+    <Property Name="Un_Leg_Entry_Count" Type="int" />
+    <Property Name="Vip_Leg_Entry_Count" Type="int" />
+    <Property Name="Israel_Leg_Out_Count" Type="int" />
+    <Property Name="Tourist_Leg_Out_Count" Type="int" />
+    <Property Name="Palastaine_Leg_Out_Count" Type="int" />
+    <Property Name="Deplomat_Leg_Out_Count" Type="int" />
+    <Property Name="Un_Leg_Out_Count" Type="int" />
+    <Property Name="Vip_Leg_Out_Count" Type="int" />
+    <Property Name="Israel_Car_Entry_Count" Type="int" />
+    <Property Name="Deplomat_Car_Entry_Count" Type="int" />
+    <Property Name="Ambulance_Car_Entry_Count" Type="int" />
+    <Property Name="Bus_Car_Entry_Count" Type="int" />
+    <Property Name="Transport_Car_Entry_Count" Type="int" />
+    <Property Name="Un_Car_Entry_Count" Type="int" />
+    <Property Name="Vip_Car_Entry_Count" Type="int" />
+    <Property Name="Israel_Car_Out_Count" Type="int" />
+    <Property Name="Deplomat_Car_Out_Count" Type="int" />
+    <Property Name="Ambulance_Car_Out_Count" Type="int" />
+    <Property Name="Bus_Car_Out_Count" Type="int" />
+    <Property Name="Transport_Car_Out_Count" Type="int" />
+    <Property Name="Un_Car_Out_Count" Type="int" />
+    <Property Name="Vip_Car_Out_Count" Type="int" />
+    <Property Name="Merihan_count" Type="int" />
+    <Property Name="Siyur_count" Type="int" />
+    <Property Name="Arrest_Count" Type="int" />
+    <Property Name="Sadach_Count" Type="int" />
+    <Property Name="Hablan_Count" Type="int" />
+    <Property Name="Calban_Count" Type="int" />
+    <Property Name="Delay_Count" Type="int" />
+    <Property Name="Charig_Count" Type="int" />
+    <Property Name="Hapsad_Count" Type="int" />
+    <Property Name="Rechev_check_Count" Type="int" />
+    <Property Name="Tenua_Psm_Count" Type="int" />
+    <Property Name="Tenua_Psila_Count" Type="int" />
+    <Property Name="Tenua_Td_Count" Type="int" />
+    <Property Name="Tenua_Bet_Mishpat_Count" Type="int" />
+    <Property Name="Tenua_Cars_Down_Count" Type="int" />
+    <Property Name="Tenua_license_Count" Type="int" />
+    <Property Name="Tenua_Reports_count" Type="int" />
+    <Property Name="Biometry_count" Type="int" />
+    <Property Name="Biometry_Success_count" Type="int" />
+    <Property Name="Biometry_Harabs_Count" Type="int" />
+    <Property Name="Exercise_Count" Type="int" />
+    <Property Name="Exercise_Success_count" Type="int" />
+    <Property Name="Exercise_Failed_count" Type="int" />
+    <Property Name="Exercise_Commants" Type="varchar" MaxLength="80" />
+    <Property Name="Alef_blue_Count" Type="int" />
+    <Property Name="Alef_Security_Count" Type="int" />
+    <Property Name="Alef_Matak_Count" Type="int" />
+    <Property Name="Alef_Mz_Count" Type="int" />
+    <Property Name="Alef_Magav_count" Type="int" />
+    <Property Name="Alef_Else_Count" Type="int" />
+    <Property Name="Bait_blue_Count" Type="int" />
+    <Property Name="Bait_Security_Count" Type="int" />
+    <Property Name="Bait_Matak_Count" Type="int" />
+    <Property Name="Bait_Mz_Count" Type="int" />
+    <Property Name="Bait_Magav_count" Type="int" />
+    <Property Name="Bait_Else_Count" Type="int" />
+    <Property Name="Gimel_blue_Count" Type="int" />
+    <Property Name="Gimel_Security_Count" Type="int" />
+    <Property Name="Gimel_Matak_Count" Type="int" />
+    <Property Name="Gimel_Mz_Count" Type="int" />
+    <Property Name="Gimel_Magav_count" Type="int" />
+    <Property Name="Gimel_Else_Count" Type="int" />
+    <Property Name="General_Comment" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="T_Person">
+    <Key>
+      <PropertyRef Name="Person_ID" />
+    </Key>
+    <Property Name="Person_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Maavar_ID" Type="int" />
+    <Property Name="Hour_Pass" Type="time" Precision="0" />
+    <Property Name="Person_Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="T_Time_Avg">
+    <Key>
+      <PropertyRef Name="TimeAvg_ID" />
+    </Key>
+    <Property Name="TimeAvg_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Maavar_ID" Type="int" />
+    <Property Name="Acivity_Date" Type="datetime" />
+    <Property Name="Hour_Check" Type="time" Precision="0" />
+    <Property Name="Avg_Car_count" Type="int" />
+    <Property Name="Avg_Leg_count" Type="int" />
+  </EntityType>
+  <EntityType Name="T_Tpisot">
+    <Key>
+      <PropertyRef Name="Tpisa_ID" />
+    </Key>
+    <Property Name="Tpisa_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Maavar_ID" Type="int" Nullable="false" />
+    <Property Name="Kod_Tpisa" Type="int" />
+    <Property Name="Tpisa_count" Type="int" />
+    <Property Name="Tpisa_comment" Type="varchar" MaxLength="400" />
+  </EntityType>
+  <Function Name="Spp_GetEruimByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="Spp_GetEruimByMaavarID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Maavar_IDs" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Spp_GetPersonByMaavarID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Maavar_IDs" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Spp_GetSumMaavarByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="Spp_GetSumTimeAvgByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="Spp_GetSumTpisotByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="Spp_GetTimeAvgByMaavarID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Maavar_IDs" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Spp_GetTpisotByMaavarID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Maavar_IDs" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Spp_RemoveItemByIDs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TableName" Type="varchar" Mode="In" />
+    <Parameter Name="IDs" Type="varchar(max)" Mode="In" />
+    <Parameter Name="MaavarID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Spp_SearchMaavarByCriteria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KodMaavar" Type="int" Mode="In" />
+    <Parameter Name="Date" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="Spp_SearchMaavarByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <EntityContainer Name="MaavarimjerModelStoreContainer">
+    <EntitySet Name="T_Eruim" EntityType="Self.T_Eruim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Maavarim" EntityType="Self.T_Maavarim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Person" EntityType="Self.T_Person" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Time_Avg" EntityType="Self.T_Time_Avg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Tpisot" EntityType="Self.T_Tpisot" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

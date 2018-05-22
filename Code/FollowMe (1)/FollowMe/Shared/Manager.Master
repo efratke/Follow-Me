@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Shared/masterPage.Master" CodeBehind="Manager.Master.cs" Inherits="FollowMe.Shared.Manager" %>
+
+<asp:Content ID="Content_m1" ContentPlaceHolderID="head_" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content_m2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+    <div class="clear hideSkiplink" style="left: auto; top: 200px">
+        <asp:Menu ID="NavigationMenu" runat="server" CssClass="animatedtabs" EnableViewState="false"
+            IncludeStyleBlock="false" Orientation="Horizontal">
+            <Items>
+                
+                <asp:MenuItem NavigateUrl="../Forms/ArchiveOrders.aspx" Text="Orders" />
+                <asp:MenuItem NavigateUrl="../Forms/Manager.aspx" Text="System Setup" />
+                <asp:MenuItem NavigateUrl="../Forms/Owners.aspx" Text="Customers" />
+                <asp:MenuItem NavigateUrl="../Forms/Connect.aspx" Text="Connect Readers" />
+            </Items>
+        </asp:Menu>
+    </div>
+    <div id="maincontent">
+        <center>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+        </center>
+    </div>
+</asp:Content>
+
+

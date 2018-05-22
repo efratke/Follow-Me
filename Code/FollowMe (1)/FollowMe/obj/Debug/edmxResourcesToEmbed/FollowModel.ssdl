@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FollowModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FollowModelStoreContainer">
+    <EntitySet Name="ActiveAntenna" EntityType="FollowModel.Store.ActiveAntenna" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ActiveOrder" EntityType="FollowModel.Store.ActiveOrder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Colors" EntityType="FollowModel.Store.Colors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ConnectionDetailsInStation" EntityType="FollowModel.Store.ConnectionDetailsInStation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Order" EntityType="FollowModel.Store.Order" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderDetails" EntityType="FollowModel.Store.OrderDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Owners" EntityType="FollowModel.Store.Owners" store:Type="Tables" store:Schema="dbo" store:Name="Owners">
+      <DefiningQuery>SELECT 
+      [Owners].[OwnerId] AS [OwnerId], 
+      [Owners].[Address] AS [Address], 
+      [Owners].[Company] AS [Company], 
+      [Owners].[Name] AS [Name], 
+      [Owners].[Pass] AS [Pass], 
+      [Owners].[Phone] AS [Phone]
+      FROM [dbo].[Owners] AS [Owners]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Process" EntityType="FollowModel.Store.Process" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProcessDetails" EntityType="FollowModel.Store.ProcessDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Readers" EntityType="FollowModel.Store.Readers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reading" EntityType="FollowModel.Store.Reading" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Station" EntityType="FollowModel.Store.Station" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="ActiveAntenna">
+    <Key>
+      <PropertyRef Name="ActiveAntennaId" />
+    </Key>
+    <Property Name="ActiveAntennaId" Type="int" Nullable="false" />
+    <Property Name="ActiveAntennas" Type="int" />
+    <Property Name="ReadeId" Type="int" />
+  </EntityType>
+  <EntityType Name="ActiveOrder">
+    <Key>
+      <PropertyRef Name="ActiveOrderId" />
+    </Key>
+    <Property Name="ActiveOrderId" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="FinishDate" Type="datetime" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="OwnerId" Type="int" />
+    <Property Name="ProcessId" Type="int" />
+  </EntityType>
+  <EntityType Name="Colors">
+    <Key>
+      <PropertyRef Name="ColorId" />
+    </Key>
+    <Property Name="ColorId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ConnectionDetailsInStation">
+    <Key>
+      <PropertyRef Name="ConnectionDetailsInStationId" />
+    </Key>
+    <Property Name="ConnectionDetailsInStationId" Type="int" Nullable="false" />
+    <Property Name="Antena" Type="int" />
+    <Property Name="ReadeId" Type="int" />
+    <Property Name="StationId" Type="int" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="OwnerId" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Name="OrderDetailId" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="FirstEPC" Type="varchar(max)" />
+    <Property Name="LastEPC" Type="varchar(max)" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="ProcessId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\OWNER\DOCUMENTS\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FOLLOWME\FOLLOWME\APP_DATA\FOLLOWDB.MDF.dbo.Owners' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Owners">
+    <Key>
+      <PropertyRef Name="OwnerId" />
+    </Key>
+    <Property Name="OwnerId" Type="int" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Company" Type="varchar(max)" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Pass" Type="varchar(max)" />
+    <Property Name="Phone" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Process">
+    <Key>
+      <PropertyRef Name="ProcessId" />
+    </Key>
+    <Property Name="ProcessId" Type="int" Nullable="false" />
+    <Property Name="ColorId" Type="int" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ProcessDetails">
+    <Key>
+      <PropertyRef Name="ProcessDetailId" />
+    </Key>
+    <Property Name="ProcessDetailId" Type="int" Nullable="false" />
+    <Property Name="Minutes" Type="int" />
+    <Property Name="MoreDetails" Type="varchar(max)" />
+    <Property Name="Station" Type="int" />
+  </EntityType>
+  <EntityType Name="Readers">
+    <Key>
+      <PropertyRef Name="ReaderId" />
+    </Key>
+    <Property Name="ReaderId" Type="int" Nullable="false" />
+    <Property Name="Area" Type="varchar(max)" />
+    <Property Name="IP" Type="varchar(max)" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Reading">
+    <Key>
+      <PropertyRef Name="ReadingId" />
+    </Key>
+    <Property Name="ReadingId" Type="int" Nullable="false" />
+    <Property Name="Antena" Type="int" />
+    <Property Name="EPC" Type="varchar(max)" />
+    <Property Name="REderId" Type="int" />
+    <Property Name="Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Station">
+    <Key>
+      <PropertyRef Name="StationId" />
+    </Key>
+    <Property Name="StationId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+</Schema>

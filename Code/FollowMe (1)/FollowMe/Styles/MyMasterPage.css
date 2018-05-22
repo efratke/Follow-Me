@@ -1,0 +1,422 @@
+﻿
+/* DEFAULTS
+----------------------------------------------------------*/
+/*
+body   
+{
+     
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+     padding: 0px;
+    border-collapse: collapse;
+    color: #1b105b;
+}
+.body{
+margin: 0;
+padding: 0;
+border: 0;
+overflow: hidden;
+height: 100%; 
+max-height: 100%; 
+
+}*/
+
+.body
+{
+    
+    background-color: White;
+    overflow: hidden;
+    margin: inherit;
+}
+
+.textBox
+{
+    font-size: X-Large;
+    font-family: "Maiandra GD";
+     color: #1b105b;
+}
+
+
+#framecontentLeft, #framecontentRight
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px; /*Width of left frame div*/
+    height: 100%;
+    overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+    color: white;
+}
+
+#framecontentRight
+{
+    left: auto;
+     right: 0;
+    width: 200px; /*Width of right frame div*/
+    overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+    color: white;
+}
+
+#framecontentTop
+{
+    position: absolute;
+    top: 0;
+    left: 200px; /*Set left value to WidthOfLeftFrameDiv*/
+    right: 200px; /*Set right value to WidthOfRightFrameDiv*/
+    width: auto;
+    /*height: 215px;*/ /*Height of top frame div*/
+    overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+
+    background-color: #fff;
+    color: #1b105b;
+    border: 3px solid #1b105b;
+}
+
+.title
+{
+    top: 50;
+    font-size: 80px;
+    font-family: Maiandra GD;
+}
+
+#maincontent
+{
+    position: fixed;
+    top: 220px; /*Set top value to HeightOfTopFrameDiv*/
+    left: 200px; /*Set left value to WidthOfLeftFrameDiv*/
+    right: 200px; /*Set right value to WidthOfRightFrameDiv*/
+    bottom: 0;
+    overflow: scroll;
+    background-color:transparent;
+        border-color: #1b105b;
+    border-width: medium;
+    border: 3px solid #1b105b;
+}
+
+.innertube
+{
+    margin: 15px; /*Margins for inner DIV inside each DIV (to provide padding)*/
+}
+
+* html body
+{
+    /*IE6 hack*/
+    padding: 120px 150px 0 200px; /*Set value to (HeightOfTopFrameDiv WidthOfRightFrameDiv 0 WidthOfLeftFrameDiv)*/
+}
+
+* html 
+
+{
+    /*IE6 hack*/
+    width: 100%;
+}
+
+* html #framecontentTop
+{
+    /*IE6 hack*/
+    width: 100%;
+}
+
+div.hideSkiplink
+{
+    background-color: transparent;
+    width: 100%;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+/*
+.page
+{
+    width: 960px;
+     background-color:Aqua;
+       color: #c2c2c2;
+     margin: 20px auto 0px auto;
+    border: 2px solid #c2c2c2;
+   
+}-*/
+
+.hideSkiplink
+{
+    width: 100%;
+}
+
+/*
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+*/
+div.hideSkiplink
+{
+    /*background-color:#3a4f63;*/
+    width: 100%;
+}
+
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    bottom: 0;
+    font-family: Highlight LET;
+    font-size: XX-Large;
+    background-color: #465c71;
+    border: 1px #4e667d solid;
+    color: #dde4ec;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6;
+    color: #465c71;
+    text-decoration: none;
+}
+
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+.button
+{
+    cursor: auto;
+    background-image: url("../Images/dark.png");
+   background-repeat:no-repeat;
+    border-color: Black;
+    font-family: "Maiandra GD";
+    font-size: X-Large;
+    text-align: center;
+    color:#063475;
+}
+
+.button1 {
+    cursor: auto;
+    background-image: url("../Images/light.png");
+    background-repeat: no-repeat;
+    border-color: Black;
+    font-family: "Maiandra GD";
+    font-size: X-Large;
+    text-align: center;
+}
+
+.button:hover
+{
+    text-decoration: none;
+    background-image: url("../Images/light.png");
+     background-repeat:no-repeat;
+   
+    color: White;
+    text-align: center;
+}
+
+.button:active
+{
+    position: relative;
+    top: 1px;
+}
+.button:Enabled
+{
+    cursor: pointer;
+}
+
+/***********************************************************************/
+.gridAlternatingRowStyle
+{
+    background-color: White;
+}
+.gridEditRowStyle
+{
+    background-color: #2461BF;
+}
+.gridFooterStyle
+{
+    background-color: #4f81bd;
+    color: White;
+    font-weight: bold;
+}
+.gridHeaderStyle
+{
+    background-color: #4f81bd;
+    font-weight: bold;
+    color: White;
+}
+.gridPagerStyle
+{
+    background-color: #98B3F6;
+    color: #333333;
+    text-align: center;
+    margin: 20px;
+    border: 1px solid black;
+    background-image: url("../Images/abc.gif");
+}
+.gridRowStyle
+{
+    color: #333333;
+}
+
+.gridSelectedRowStyle
+{
+    background-color: #D1DDF1;
+    color: White;
+}
+.grid
+{
+    border: none;
+    width: 100%;
+    color: White;
+}
+
+
+/***********************************************************************/
+
+
+
+.animatedtabs
+{
+    border-bottom: 1px solid gray;
+    overflow: hidden;
+    font-size:40px; /*font of menu text*/
+    bottom: 0;
+    font-family: Highlight LET;
+    background-color: White;
+    color: White;
+    display: block;
+    line-height: 1.51em;
+    padding: 4px 0px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+.animatedtabs ul
+{
+    list-style-type: none;
+    margin: 0;
+    margin-left: 0px; /*offset of first tab relative to page left edge*/
+    padding: 0;
+    width: auto;
+}
+
+.animatedtabs li
+{
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.animatedtabs a
+{
+    float: left;
+    position: relative;
+    top: 10px; /* 1) Number of pixels to protrude up for selected tab. Should equal (3) MINUS (2) below */
+    background: url("../Images/right.png") no-repeat right top;
+    margin: 0;
+    margin-right: 1px; /*Spacing between each tab*/
+    padding: 0 0 0 0px;
+    text-decoration: none;
+    height: auto;
+    color: #cfdbe6;
+}
+
+.animatedtabs a span
+{
+    float: left;
+    position: relative;
+    display: block;
+    background: url("../Images/left.png") no-repeat right top;
+    padding: 5px 14px 3px 5px; /* 2) Padding within each tab. The 3rd value, or 3px, should equal (1) MINUS (3) */
+    font-weight: bold;
+    color: black;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+.animatedtabs a span
+{
+    float: left;
+}
+/* End IE5-Mac hack */
+
+
+.animatedtabs .selected a
+{
+    background-position: 0 -125px;
+    top: 0;
+
+}
+
+.animatedtabs .selected a span
+{
+    background-position: 100% -125px;
+    color: black;
+    padding-bottom: 8px; /* 3) Bottom padding of selected tab. Should equal (1) PLUS (2) above */
+    top: 0;
+}
+
+.animatedtabs a:hover
+{
+    background-position: 0% -125px;
+    top: 0;
+    background: url("../Images/right.png") no-repeat right top; /*background-color:#1b105b;  background-color: #bfcbd6;     color: #465c71;     text-decoration: none; */
+}
+
+.animatedtabs a:hover span
+{
+    background-position: 100% -125px;
+    padding-bottom: 8px; /* 3) Bottom padding of selected tab. Should equal (1) PLUS (2) above */
+    top: 0;
+}
+
+
+.LinkButton
+{
+    color: #4f81bd;
+}
+.LinkButton:hover
+{
+    color: #1b105b;
+	font-weight:bold;	    
+}
+.LinkButton:click
+{
+    color:Aqua;
+	font-weight:bold;	    
+}
+.Label
+{
+    font-family:"Maiandra GD"; 
+     Font-Size:X-Large ;
+     color:#1b105b;
+    }
+.Titel
+{
+     font-family:"Maiandra GD"; 
+     Font-Size:XX-Large ;
+     color:Black;
+    
+    }

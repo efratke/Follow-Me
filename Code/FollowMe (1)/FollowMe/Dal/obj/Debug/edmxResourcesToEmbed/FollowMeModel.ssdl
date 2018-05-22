@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FollowMe_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ActiveAntenna">
+    <Key>
+      <PropertyRef Name="ActiveAntennaId" />
+    </Key>
+    <Property Name="ActiveAntennaId" Type="int" Nullable="false" />
+    <Property Name="ActiveAntennas" Type="int" />
+    <Property Name="ReadeId" Type="int" />
+  </EntityType>
+  <EntityType Name="ActiveOrder">
+    <Key>
+      <PropertyRef Name="ActiveOrderId" />
+    </Key>
+    <Property Name="ActiveOrderId" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="FinishDate" Type="datetime" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="OwnerId" Type="int" />
+    <Property Name="ProcessId" Type="int" />
+  </EntityType>
+  <EntityType Name="Colors">
+    <Key>
+      <PropertyRef Name="ColorId" />
+    </Key>
+    <Property Name="ColorId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ConnectionDetailsInStation">
+    <Key>
+      <PropertyRef Name="ConnectionDetailsInStationId" />
+    </Key>
+    <Property Name="ConnectionDetailsInStationId" Type="int" Nullable="false" />
+    <Property Name="Antena" Type="int" />
+    <Property Name="ReadeId" Type="int" />
+    <Property Name="StationId" Type="int" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="OwnerId" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Name="OrderDetailId" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="FirstEPC" Type="varchar(max)" />
+    <Property Name="LastEPC" Type="varchar(max)" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="ProcessId" Type="int" />
+  </EntityType>
+  <EntityType Name="Owners">
+    <Key>
+      <PropertyRef Name="OwnerId" />
+    </Key>
+    <Property Name="OwnerId" Type="int" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Company" Type="varchar(max)" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Pass" Type="varchar(max)" />
+    <Property Name="Phone" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Process">
+    <Key>
+      <PropertyRef Name="ProcessId" />
+    </Key>
+    <Property Name="ProcessId" Type="int" Nullable="false" />
+    <Property Name="ColorId" Type="int" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ProcessDetails">
+    <Key>
+      <PropertyRef Name="ProcessDetailId" />
+    </Key>
+    <Property Name="ProcessDetailId" Type="int" Nullable="false" />
+    <Property Name="Minutes" Type="int" />
+    <Property Name="MoreDetails" Type="varchar(max)" />
+    <Property Name="Station" Type="int" />
+  </EntityType>
+  <EntityType Name="Readers">
+    <Key>
+      <PropertyRef Name="ReaderId" />
+    </Key>
+    <Property Name="ReaderId" Type="int" Nullable="false" />
+    <Property Name="Area" Type="varchar(max)" />
+    <Property Name="IP" Type="varchar(max)" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Reading">
+    <Key>
+      <PropertyRef Name="ReadingId" />
+    </Key>
+    <Property Name="ReadingId" Type="int" Nullable="false" />
+    <Property Name="Antena" Type="int" />
+    <Property Name="EPC" Type="varchar(max)" />
+    <Property Name="REderId" Type="int" />
+    <Property Name="Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Station">
+    <Key>
+      <PropertyRef Name="StationId" />
+    </Key>
+    <Property Name="StationId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="FollowMe_ModelStoreContainer">
+    <EntitySet Name="ActiveAntenna" EntityType="Self.ActiveAntenna" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActiveOrder" EntityType="Self.ActiveOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Colors" EntityType="Self.Colors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConnectionDetailsInStation" EntityType="Self.ConnectionDetailsInStation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Owners" EntityType="Self.Owners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Process" EntityType="Self.Process" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProcessDetails" EntityType="Self.ProcessDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Readers" EntityType="Self.Readers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reading" EntityType="Self.Reading" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Station" EntityType="Self.Station" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

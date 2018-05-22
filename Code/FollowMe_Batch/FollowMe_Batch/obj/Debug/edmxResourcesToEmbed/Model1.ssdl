@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FollowMeDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FollowMeDBModelStoreContainer">
+    <EntitySet Name="ActiveAntenna" EntityType="FollowMeDBModel.Store.ActiveAntenna" store:Type="Tables" store:Schema="dbo" store:Name="ActiveAntenna">
+      <DefiningQuery>SELECT 
+      [ActiveAntenna].[ActiveAntennaId] AS [ActiveAntennaId], 
+      [ActiveAntenna].[ActiveAntennas] AS [ActiveAntennas], 
+      [ActiveAntenna].[ReaderId] AS [ReaderId]
+      FROM [dbo].[ActiveAntenna] AS [ActiveAntenna]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ArchiveOrder" EntityType="FollowMeDBModel.Store.ArchiveOrder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Colors" EntityType="FollowMeDBModel.Store.Colors" store:Type="Tables" store:Schema="dbo" store:Name="Colors">
+      <DefiningQuery>SELECT 
+      [Colors].[ColorId] AS [ColorId], 
+      [Colors].[ColorName] AS [ColorName]
+      FROM [dbo].[Colors] AS [Colors]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ConnectionDetailsInStation" EntityType="FollowMeDBModel.Store.ConnectionDetailsInStation" store:Type="Tables" store:Schema="dbo" store:Name="ConnectionDetailsInStation">
+      <DefiningQuery>SELECT 
+      [ConnectionDetailsInStation].[ConnectionDetailsInStationId] AS [ConnectionDetailsInStationId], 
+      [ConnectionDetailsInStation].[Antena] AS [Antena], 
+      [ConnectionDetailsInStation].[ReadeId] AS [ReadeId], 
+      [ConnectionDetailsInStation].[StationId] AS [StationId]
+      FROM [dbo].[ConnectionDetailsInStation] AS [ConnectionDetailsInStation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Order" EntityType="FollowMeDBModel.Store.Order" store:Type="Tables" store:Schema="dbo" store:Name="Order">
+      <DefiningQuery>SELECT 
+      [Order].[OrderId] AS [OrderId], 
+      [Order].[Date] AS [Date], 
+      [Order].[OwnerId] AS [OwnerId]
+      FROM [dbo].[Order] AS [Order]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OrderDetails" EntityType="FollowMeDBModel.Store.OrderDetails" store:Type="Tables" store:Schema="dbo" store:Name="OrderDetails">
+      <DefiningQuery>SELECT 
+      [OrderDetails].[OrderDetailId] AS [OrderDetailId], 
+      [OrderDetails].[Amount] AS [Amount], 
+      [OrderDetails].[FirstEPC] AS [FirstEPC], 
+      [OrderDetails].[LastEPC] AS [LastEPC], 
+      [OrderDetails].[OrderId] AS [OrderId], 
+      [OrderDetails].[ProcessId] AS [ProcessId]
+      FROM [dbo].[OrderDetails] AS [OrderDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Owners" EntityType="FollowMeDBModel.Store.Owners" store:Type="Tables" store:Schema="dbo" store:Name="Owners">
+      <DefiningQuery>SELECT 
+      [Owners].[OwnerId] AS [OwnerId], 
+      [Owners].[Address] AS [Address], 
+      [Owners].[Company] AS [Company], 
+      [Owners].[Name] AS [Name], 
+      [Owners].[Pass] AS [Pass], 
+      [Owners].[Phone] AS [Phone]
+      FROM [dbo].[Owners] AS [Owners]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Process" EntityType="FollowMeDBModel.Store.Process" store:Type="Tables" store:Schema="dbo" store:Name="Process">
+      <DefiningQuery>SELECT 
+      [Process].[ProcessId] AS [ProcessId], 
+      [Process].[ColorId] AS [ColorId], 
+      [Process].[Name] AS [Name]
+      FROM [dbo].[Process] AS [Process]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ProcessDetails" EntityType="FollowMeDBModel.Store.ProcessDetails" store:Type="Tables" store:Schema="dbo" store:Name="ProcessDetails">
+      <DefiningQuery>SELECT 
+      [ProcessDetails].[ProcessDetailId] AS [ProcessDetailId], 
+      [ProcessDetails].[Minutes] AS [Minutes], 
+      [ProcessDetails].[MoreDetails] AS [MoreDetails], 
+      [ProcessDetails].[Station] AS [Station], 
+      [ProcessDetails].[ProcessId] AS [ProcessId]
+      FROM [dbo].[ProcessDetails] AS [ProcessDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Readers" EntityType="FollowMeDBModel.Store.Readers" store:Type="Tables" store:Schema="dbo" store:Name="Readers">
+      <DefiningQuery>SELECT 
+      [Readers].[ReaderId] AS [ReaderId], 
+      [Readers].[Area] AS [Area], 
+      [Readers].[IP] AS [IP], 
+      [Readers].[Name] AS [Name]
+      FROM [dbo].[Readers] AS [Readers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Reading" EntityType="FollowMeDBModel.Store.Reading" store:Type="Tables" store:Schema="dbo" store:Name="Reading">
+      <DefiningQuery>SELECT 
+      [Reading].[ReadingId] AS [ReadingId], 
+      [Reading].[Antena] AS [Antena], 
+      [Reading].[EPC] AS [EPC], 
+      [Reading].[RederId] AS [RederId], 
+      [Reading].[Time] AS [Time]
+      FROM [dbo].[Reading] AS [Reading]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Station" EntityType="FollowMeDBModel.Store.Station" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="FollowMeDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Table" EntityType="FollowMeDBModel.Store.Table" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\OWNER\DOCUMENTS\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FOLLOWME\FOLLOWME\APP_DATA\FOLLOWMEDB.MDF.dbo.ActiveAntenna' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ActiveAntenna">
+    <Key>
+      <PropertyRef Name="ActiveAntennaId" />
+    </Key>
+    <Property Name="ActiveAntennaId" Type="int" Nullable="false" />
+    <Property Name="ActiveAntennas" Type="int" />
+    <Property Name="ReaderId" Type="int" />
+  </EntityType>
+  <EntityType Name="ArchiveOrder">
+    <Key>
+      <PropertyRef Name="ArchiveOrderId" />
+    </Key>
+    <Property Name="ArchiveOrderId" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="FinishDate" Type="datetime" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="OwnerId" Type="int" />
+    <Property Name="ProcessId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\OWNER\DOCUMENTS\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FOLLOWME\FOLLOWME\APP_DATA\FOLLOWMEDB.MDF.dbo.Colors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Colors">
+    <Key>
+      <PropertyRef Name="ColorId" />
+      <PropertyRef Name="ColorName" />
+    </Key>
+    <Property Name="ColorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ColorName" Type="nchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\OWNER\DOCUMENTS\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FOLLOWME\FOLLOWME\APP_DATA\FOLLOWMEDB.MDF.dbo.ConnectionDetailsInStation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ConnectionDetailsInStation">
+    <Key>
+      <PropertyRef Name="ConnectionDetailsInStationId" />
+    </Key>
+    <Property Name="ConnectionDetailsInStationId" Type="int" Nullable="false" />
+    <Property Name="Antena" Type="int" />
+    <Property Name="ReadeId" Type="int" />
+    <Property Name="StationId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\OWNER\DOCUMENTS\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FOLLOWME\FOLLOWME\APP_DATA\FOLLOWMEDB.MDF.dbo.Order' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="OwnerId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\OWNER\DOCUMENTS\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FOLLOWME\FOLLOWME\APP_DATA\FOLLOWMEDB.MDF.dbo.OrderDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Name="OrderDetailId" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="FirstEPC" Type="varchar(max)" />
+    <Property Name="LastEPC" Type="varchar(max)" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="ProcessId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\OWNER\DOCUMENTS\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FOLLOWME\FOLLOWME\APP_DATA\FOLLOWMEDB.MDF.dbo.Owners' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Owners">
+    <Key>
+      <PropertyRef Name="OwnerId" />
+    </Key>
+    <Property Name="OwnerId" Type="int" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Company" Type="varchar(max)" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Pass" Type="varchar(max)" />
+    <Property Name="Phone" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\OWNER\DOCUMENTS\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FOLLOWME\FOLLOWME\APP_DATA\FOLLOWMEDB.MDF.dbo.Process' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Process">
+    <Key>
+      <PropertyRef Name="ProcessId" />
+    </Key>
+    <Property Name="ProcessId" Type="int" Nullable="false" />
+    <Property Name="ColorId" Type="int" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\OWNER\DOCUMENTS\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FOLLOWME\FOLLOWME\APP_DATA\FOLLOWMEDB.MDF.dbo.ProcessDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ProcessDetails">
+    <Key>
+      <PropertyRef Name="ProcessDetailId" />
+    </Key>
+    <Property Name="ProcessDetailId" Type="int" Nullable="false" />
+    <Property Name="Minutes" Type="int" />
+    <Property Name="MoreDetails" Type="varchar(max)" />
+    <Property Name="Station" Type="int" />
+    <Property Name="ProcessId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\OWNER\DOCUMENTS\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FOLLOWME\FOLLOWME\APP_DATA\FOLLOWMEDB.MDF.dbo.Readers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Readers">
+    <Key>
+      <PropertyRef Name="ReaderId" />
+    </Key>
+    <Property Name="ReaderId" Type="int" Nullable="false" />
+    <Property Name="Area" Type="varchar(max)" />
+    <Property Name="IP" Type="varchar(max)" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\OWNER\DOCUMENTS\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FOLLOWME\FOLLOWME\APP_DATA\FOLLOWMEDB.MDF.dbo.Reading' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Reading">
+    <Key>
+      <PropertyRef Name="ReadingId" />
+    </Key>
+    <Property Name="ReadingId" Type="int" Nullable="false" />
+    <Property Name="Antena" Type="int" />
+    <Property Name="EPC" Type="varchar(max)" />
+    <Property Name="RederId" Type="int" />
+    <Property Name="Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Station">
+    <Key>
+      <PropertyRef Name="StationId" />
+    </Key>
+    <Property Name="StationId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="ActiveAntennaId" />
+    </Key>
+    <Property Name="ActiveAntennaId" Type="int" Nullable="false" />
+  </EntityType>
+  <Function Name="ActiveAntennaSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ActiveAntennasInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ant1" Type="int" Mode="In" />
+    <Parameter Name="Ant2" Type="int" Mode="In" />
+    <Parameter Name="Ant3" Type="int" Mode="In" />
+    <Parameter Name="Ant4" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AllOrdersSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ArchiveOrderInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderId" Type="int" Mode="In" />
+    <Parameter Name="OwnerId" Type="int" Mode="In" />
+    <Parameter Name="Amount" Type="int" Mode="In" />
+    <Parameter Name="OrderDate" Type="datetime" Mode="In" />
+    <Parameter Name="FinishDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ArchiveOrdersDateSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderDate" Type="datetime" Mode="In" />
+    <Parameter Name="FinishDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ArchiveOrdersSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ColorsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ColorName" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="ColorsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="company" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="company" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="ConnectionDetailsInStationInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StationId" Type="int" Mode="In" />
+    <Parameter Name="Antenna" Type="int" Mode="In" />
+    <Parameter Name="ReaderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CurrentStation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DateSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pass" Type="nchar" Mode="In" />
+    <Parameter Name="company" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="deleteOrders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="OrderDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="OrderDetailsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Date" Type="datetime" Mode="In" />
+    <Parameter Name="OwnerId" Type="int" Mode="In" />
+    <Parameter Name="Process" Type="int" Mode="In" />
+    <Parameter Name="Amount" Type="int" Mode="In" />
+    <Parameter Name="firstEPC" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="lastEPC" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="OrderIdSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pass" Type="nchar" Mode="In" />
+    <Parameter Name="company" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="OrdersDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="OwnersInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Pass" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Company" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Phone" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="OwnersSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Pass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pass" Type="nchar" Mode="In" />
+    <Parameter Name="company" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ProcessDetailsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReaderId" Type="int" Mode="In" />
+    <Parameter Name="Minutes" Type="int" Mode="In" />
+    <Parameter Name="MoreDetails" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ProcessDetailsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProcessId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProcessesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ColorId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProcessesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ProcessIdSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReaderDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReaderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReaderInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Area" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ip" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ReaderSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ReadingForOrderIdSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EPC" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ReadingInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EPC" Type="nvarchar" Mode="In" />
+    <Parameter Name="ReaderId" Type="int" Mode="In" />
+    <Parameter Name="Antena" Type="int" Mode="In" />
+    <Parameter Name="Time" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ReadingSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Showselect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProcessId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="StationAndTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProcessId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="StationAndTimeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProcessId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="StationDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StationId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="StationInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="StationSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="StoredProcedure2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="TimeProcess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProcessId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="TimeRead" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="TimeReadSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderId" Type="int" Mode="In" />
+  </Function>
+</Schema>

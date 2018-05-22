@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="FollowModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="FollowModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ActiveAntenna" EntityType="FollowModel.ActiveAntenna" />
+    <EntitySet Name="ActiveOrder" EntityType="FollowModel.ActiveOrder" />
+    <EntitySet Name="Colors" EntityType="FollowModel.Colors" />
+    <EntitySet Name="ConnectionDetailsInStation" EntityType="FollowModel.ConnectionDetailsInStation" />
+    <EntitySet Name="Order" EntityType="FollowModel.Order" />
+    <EntitySet Name="OrderDetails" EntityType="FollowModel.OrderDetails" />
+    <EntitySet Name="Owners" EntityType="FollowModel.Owners" />
+    <EntitySet Name="Process" EntityType="FollowModel.Process" />
+    <EntitySet Name="ProcessDetails" EntityType="FollowModel.ProcessDetails" />
+    <EntitySet Name="Readers" EntityType="FollowModel.Readers" />
+    <EntitySet Name="Reading" EntityType="FollowModel.Reading" />
+    <EntitySet Name="Station" EntityType="FollowModel.Station" />
+  </EntityContainer>
+  <EntityType Name="ActiveAntenna">
+    <Key>
+      <PropertyRef Name="ActiveAntennaId" />
+    </Key>
+    <Property Type="Int32" Name="ActiveAntennaId" Nullable="false" />
+    <Property Type="Int32" Name="ActiveAntennas" />
+    <Property Type="Int32" Name="ReadeId" />
+  </EntityType>
+  <EntityType Name="ActiveOrder">
+    <Key>
+      <PropertyRef Name="ActiveOrderId" />
+    </Key>
+    <Property Type="Int32" Name="ActiveOrderId" Nullable="false" />
+    <Property Type="Int32" Name="Amount" />
+    <Property Type="DateTime" Name="FinishDate" Precision="3" />
+    <Property Type="DateTime" Name="OrderDate" Precision="3" />
+    <Property Type="Int32" Name="OwnerId" />
+    <Property Type="Int32" Name="ProcessId" />
+  </EntityType>
+  <EntityType Name="Colors">
+    <Key>
+      <PropertyRef Name="ColorId" />
+    </Key>
+    <Property Type="Int32" Name="ColorId" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ConnectionDetailsInStation">
+    <Key>
+      <PropertyRef Name="ConnectionDetailsInStationId" />
+    </Key>
+    <Property Type="Int32" Name="ConnectionDetailsInStationId" Nullable="false" />
+    <Property Type="Int32" Name="Antena" />
+    <Property Type="Int32" Name="ReadeId" />
+    <Property Type="Int32" Name="StationId" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Type="Int32" Name="OrderId" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Precision="3" />
+    <Property Type="Int32" Name="OwnerId" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Type="Int32" Name="OrderDetailId" Nullable="false" />
+    <Property Type="Int32" Name="Amount" />
+    <Property Type="String" Name="FirstEPC" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastEPC" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="OrderId" />
+    <Property Type="Int32" Name="ProcessId" />
+  </EntityType>
+  <EntityType Name="Owners">
+    <Key>
+      <PropertyRef Name="OwnerId" />
+    </Key>
+    <Property Type="Int32" Name="OwnerId" Nullable="false" />
+    <Property Type="String" Name="Address" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Company" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Pass" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Phone" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Process">
+    <Key>
+      <PropertyRef Name="ProcessId" />
+    </Key>
+    <Property Type="Int32" Name="ProcessId" Nullable="false" />
+    <Property Type="Int32" Name="ColorId" />
+    <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProcessDetails">
+    <Key>
+      <PropertyRef Name="ProcessDetailId" />
+    </Key>
+    <Property Type="Int32" Name="ProcessDetailId" Nullable="false" />
+    <Property Type="Int32" Name="Minutes" />
+    <Property Type="String" Name="MoreDetails" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Station" />
+  </EntityType>
+  <EntityType Name="Readers">
+    <Key>
+      <PropertyRef Name="ReaderId" />
+    </Key>
+    <Property Type="Int32" Name="ReaderId" Nullable="false" />
+    <Property Type="String" Name="Area" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="IP" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Reading">
+    <Key>
+      <PropertyRef Name="ReadingId" />
+    </Key>
+    <Property Type="Int32" Name="ReadingId" Nullable="false" />
+    <Property Type="Int32" Name="Antena" />
+    <Property Type="String" Name="EPC" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="REderId" />
+    <Property Type="DateTime" Name="Time" Precision="3" />
+  </EntityType>
+  <EntityType Name="Station">
+    <Key>
+      <PropertyRef Name="StationId" />
+    </Key>
+    <Property Type="Int32" Name="StationId" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

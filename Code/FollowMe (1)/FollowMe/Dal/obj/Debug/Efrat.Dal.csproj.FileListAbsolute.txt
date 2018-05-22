@@ -1,0 +1,6 @@
+D:\T\Efrat.Entity\Efrat.Dal\obj\Debug\Efrat.Dal.csprojResolveAssemblyReference.cache
+D:\T\Dlls\Efrat.Dal.dll.config
+D:\T\Dlls\Efrat.Dal.dll
+D:\T\Dlls\Efrat.Dal.pdb
+D:\T\Efrat.Entity\Efrat.Dal\obj\Debug\Efrat.Dal.dll
+D:\T\Efrat.Entity\Efrat.Dal\obj\Debug\Efrat.Dal.pdb

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="04d0e45767634db19e5a9e8e3510d6e9" Name="Diagram1" >
+        <EntityTypeShape EntityType="FollowModel.ActiveAntenna" Width="1.5" PointX="0.54393348681923637" PointY="16.364963717928607" />
+        <EntityTypeShape EntityType="FollowModel.ActiveOrder" Width="1.5" PointX="5.4986399903421477" PointY="27.125056368822722" />
+        <EntityTypeShape EntityType="FollowModel.Colors" Width="1.5" PointX="6.3800357386376874" PointY="5.6069968815925515" />
+        <EntityTypeShape EntityType="FollowModel.ConnectionDetailsInStation" Width="1.5" PointX="11.018502696891549" PointY="24.345976334226307" />
+        <EntityTypeShape EntityType="FollowModel.Order" Width="1.5" PointX="9.5218495230757867" PointY="2.8828884227587324" />
+        <EntityTypeShape EntityType="FollowModel.OrderDetails" Width="1.5" PointX="6.8645963719415457" PointY="20.797873178868496" />
+        <EntityTypeShape EntityType="FollowModel.Owners" Width="1.5" PointX="1.9082727869545448" PointY="2.6788590562897077" />
+        <EntityTypeShape EntityType="FollowModel.Process" Width="1.5" PointX="10.369649346158676" PointY="17.734878354582413" />
+        <EntityTypeShape EntityType="FollowModel.ProcessDetails" Width="1.5" PointX="5.2344137920226963" PointY="10.718187262638558" />
+        <EntityTypeShape EntityType="FollowModel.Readers" Width="1.5" PointX="4.7349333263630662" PointY="0.44881781956591543" />
+        <EntityTypeShape EntityType="FollowModel.Reading" Width="1.5" PointX="7.2556514997294412" PointY="12.147221108967075" />
+        <EntityTypeShape EntityType="FollowModel.Station" Width="1.5" PointX="1.0414170366904778" PointY="16.955856122521617" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

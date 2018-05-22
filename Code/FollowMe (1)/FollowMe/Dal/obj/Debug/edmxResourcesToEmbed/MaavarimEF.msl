@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MaavarimjerModelStoreContainer" CdmEntityContainer="MaavarimjerEntities">
+    <EntitySetMapping Name="T_Tpisot">
+      <EntityTypeMapping TypeName="MaavarimjerModel.T_Tpisot">
+        <MappingFragment StoreEntitySet="T_Tpisot">
+          <ScalarProperty Name="Tpisa_comment" ColumnName="Tpisa_comment" />
+          <ScalarProperty Name="Tpisa_count" ColumnName="Tpisa_count" />
+          <ScalarProperty Name="Kod_Tpisa" ColumnName="Kod_Tpisa" />
+          <ScalarProperty Name="Maavar_ID" ColumnName="Maavar_ID" />
+          <ScalarProperty Name="Tpisa_ID" ColumnName="Tpisa_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Spp_SearchMaavarByCriteria" FunctionName="MaavarimjerModel.Store.Spp_SearchMaavarByCriteria">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MaavarimjerModel.Spp_SearchMaavarByCriteria_Result">
+          <ScalarProperty Name="Maavar_ID" ColumnName="Maavar_ID" />
+          <ScalarProperty Name="KodMaavar" ColumnName="KodMaavar" />
+          <ScalarProperty Name="Gizra_ID" ColumnName="Gizra_ID" />
+          <ScalarProperty Name="Acivity_Date" ColumnName="Acivity_Date" />
+          <ScalarProperty Name="Israel_Leg_Entry_Count" ColumnName="Israel_Leg_Entry_Count" />
+          <ScalarProperty Name="Tourist_Leg_Entry_Count" ColumnName="Tourist_Leg_Entry_Count" />
+          <ScalarProperty Name="Palastaine_Leg_Entry_Count" ColumnName="Palastaine_Leg_Entry_Count" />
+          <ScalarProperty Name="Deplomat_Leg_Entry_Count" ColumnName="Deplomat_Leg_Entry_Count" />
+          <ScalarProperty Name="Un_Leg_Entry_Count" ColumnName="Un_Leg_Entry_Count" />
+          <ScalarProperty Name="Vip_Leg_Entry_Count" ColumnName="Vip_Leg_Entry_Count" />
+          <ScalarProperty Name="Israel_Leg_Out_Count" ColumnName="Israel_Leg_Out_Count" />
+          <ScalarProperty Name="Tourist_Leg_Out_Count" ColumnName="Tourist_Leg_Out_Count" />
+          <ScalarProperty Name="Palastaine_Leg_Out_Count" ColumnName="Palastaine_Leg_Out_Count" />
+          <ScalarProperty Name="Deplomat_Leg_Out_Count" ColumnName="Deplomat_Leg_Out_Count" />
+          <ScalarProperty Name="Un_Leg_Out_Count" ColumnName="Un_Leg_Out_Count" />
+          <ScalarProperty Name="Vip_Leg_Out_Count" ColumnName="Vip_Leg_Out_Count" />
+          <ScalarProperty Name="Israel_Car_Entry_Count" ColumnName="Israel_Car_Entry_Count" />
+          <ScalarProperty Name="Deplomat_Car_Entry_Count" ColumnName="Deplomat_Car_Entry_Count" />
+          <ScalarProperty Name="Ambulance_Car_Entry_Count" ColumnName="Ambulance_Car_Entry_Count" />
+          <ScalarProperty Name="Bus_Car_Entry_Count" ColumnName="Bus_Car_Entry_Count" />
+          <ScalarProperty Name="Transport_Car_Entry_Count" ColumnName="Transport_Car_Entry_Count" />
+          <ScalarProperty Name="Un_Car_Entry_Count" ColumnName="Un_Car_Entry_Count" />
+          <ScalarProperty Name="Vip_Car_Entry_Count" ColumnName="Vip_Car_Entry_Count" />
+          <ScalarProperty Name="Israel_Car_Out_Count" ColumnName="Israel_Car_Out_Count" />
+          <ScalarProperty Name="Deplomat_Car_Out_Count" ColumnName="Deplomat_Car_Out_Count" />
+          <ScalarProperty Name="Ambulance_Car_Out_Count" ColumnName="Ambulance_Car_Out_Count" />
+          <ScalarProperty Name="Bus_Car_Out_Count" ColumnName="Bus_Car_Out_Count" />
+          <ScalarProperty Name="Transport_Car_Out_Count" ColumnName="Transport_Car_Out_Count" />
+          <ScalarProperty Name="Un_Car_Out_Count" ColumnName="Un_Car_Out_Count" />
+          <ScalarProperty Name="Vip_Car_Out_Count" ColumnName="Vip_Car_Out_Count" />
+          <ScalarProperty Name="Merihan_count" ColumnName="Merihan_count" />
+          <ScalarProperty Name="Siyur_count" ColumnName="Siyur_count" />
+          <ScalarProperty Name="Arrest_Count" ColumnName="Arrest_Count" />
+          <ScalarProperty Name="Sadach_Count" ColumnName="Sadach_Count" />
+          <ScalarProperty Name="Hablan_Count" ColumnName="Hablan_Count" />
+          <ScalarProperty Name="Calban_Count" ColumnName="Calban_Count" />
+          <ScalarProperty Name="Delay_Count" ColumnName="Delay_Count" />
+          <ScalarProperty Name="Charig_Count" ColumnName="Charig_Count" />
+          <ScalarProperty Name="Hapsad_Count" ColumnName="Hapsad_Count" />
+          <ScalarProperty Name="Rechev_check_Count" ColumnName="Rechev_check_Count" />
+          <ScalarProperty Name="Tenua_Psm_Count" ColumnName="Tenua_Psm_Count" />
+          <ScalarProperty Name="Tenua_Psila_Count" ColumnName="Tenua_Psila_Count" />
+          <ScalarProperty Name="Tenua_Td_Count" ColumnName="Tenua_Td_Count" />
+          <ScalarProperty Name="Tenua_Bet_Mishpat_Count" ColumnName="Tenua_Bet_Mishpat_Count" />
+          <ScalarProperty Name="Tenua_Cars_Down_Count" ColumnName="Tenua_Cars_Down_Count" />
+          <ScalarProperty Name="Tenua_license_Count" ColumnName="Tenua_license_Count" />
+          <ScalarProperty Name="Tenua_Reports_count" ColumnName="Tenua_Reports_count" />
+          <ScalarProperty Name="Biometry_count" ColumnName="Biometry_count" />
+          <ScalarProperty Name="Biometry_Success_count" ColumnName="Biometry_Success_count" />
+          <ScalarProperty Name="Biometry_Harabs_Count" ColumnName="Biometry_Harabs_Count" />
+          <ScalarProperty Name="Exercise_Count" ColumnName="Exercise_Count" />
+          <ScalarProperty Name="Exercise_Success_count" ColumnName="Exercise_Success_count" />
+          <ScalarProperty Name="Exercise_Failed_count" ColumnName="Exercise_Failed_count" />
+          <ScalarProperty Name="Exercise_Commants" ColumnName="Exercise_Commants" />
+          <ScalarProperty Name="Alef_blue_Count" ColumnName="Alef_blue_Count" />
+          <ScalarProperty Name="Alef_Security_Count" ColumnName="Alef_Security_Count" />
+          <ScalarProperty Name="Alef_Matak_Count" ColumnName="Alef_Matak_Count" />
+          <ScalarProperty Name="Alef_Mz_Count" ColumnName="Alef_Mz_Count" />
+          <ScalarProperty Name="Alef_Magav_count" ColumnName="Alef_Magav_count" />
+          <ScalarProperty Name="Alef_Else_Count" ColumnName="Alef_Else_Count" />
+          <ScalarProperty Name="Bait_blue_Count" ColumnName="Bait_blue_Count" />
+          <ScalarProperty Name="Bait_Security_Count" ColumnName="Bait_Security_Count" />
+          <ScalarProperty Name="Bait_Matak_Count" ColumnName="Bait_Matak_Count" />
+          <ScalarProperty Name="Bait_Mz_Count" ColumnName="Bait_Mz_Count" />
+          <ScalarProperty Name="Bait_Magav_count" ColumnName="Bait_Magav_count" />
+          <ScalarProperty Name="Bait_Else_Count" ColumnName="Bait_Else_Count" />
+          <ScalarProperty Name="Gimel_blue_Count" ColumnName="Gimel_blue_Count" />
+          <ScalarProperty Name="Gimel_Security_Count" ColumnName="Gimel_Security_Count" />
+          <ScalarProperty Name="Gimel_Matak_Count" ColumnName="Gimel_Matak_Count" />
+          <ScalarProperty Name="Gimel_Mz_Count" ColumnName="Gimel_Mz_Count" />
+          <ScalarProperty Name="Gimel_Magav_count" ColumnName="Gimel_Magav_count" />
+          <ScalarProperty Name="Gimel_Else_Count" ColumnName="Gimel_Else_Count" />
+          <ScalarProperty Name="General_Comment" ColumnName="General_Comment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Spp_SearchMaavarByDate" FunctionName="MaavarimjerModel.Store.Spp_SearchMaavarByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MaavarimjerModel.Spp_SearchMaavarByDate_Result">
+          <ScalarProperty Name="Maavar_ID" ColumnName="Maavar_ID" />
+          <ScalarProperty Name="KodMaavar" ColumnName="KodMaavar" />
+          <ScalarProperty Name="Gizra_ID" ColumnName="Gizra_ID" />
+          <ScalarProperty Name="Acivity_Date" ColumnName="Acivity_Date" />
+          <ScalarProperty Name="Israel_Leg_Entry_Count" ColumnName="Israel_Leg_Entry_Count" />
+          <ScalarProperty Name="Tourist_Leg_Entry_Count" ColumnName="Tourist_Leg_Entry_Count" />
+          <ScalarProperty Name="Palastaine_Leg_Entry_Count" ColumnName="Palastaine_Leg_Entry_Count" />
+          <ScalarProperty Name="Deplomat_Leg_Entry_Count" ColumnName="Deplomat_Leg_Entry_Count" />
+          <ScalarProperty Name="Un_Leg_Entry_Count" ColumnName="Un_Leg_Entry_Count" />
+          <ScalarProperty Name="Vip_Leg_Entry_Count" ColumnName="Vip_Leg_Entry_Count" />
+          <ScalarProperty Name="Israel_Leg_Out_Count" ColumnName="Israel_Leg_Out_Count" />
+          <ScalarProperty Name="Tourist_Leg_Out_Count" ColumnName="Tourist_Leg_Out_Count" />
+          <ScalarProperty Name="Palastaine_Leg_Out_Count" ColumnName="Palastaine_Leg_Out_Count" />
+          <ScalarProperty Name="Deplomat_Leg_Out_Count" ColumnName="Deplomat_Leg_Out_Count" />
+          <ScalarProperty Name="Un_Leg_Out_Count" ColumnName="Un_Leg_Out_Count" />
+          <ScalarProperty Name="Vip_Leg_Out_Count" ColumnName="Vip_Leg_Out_Count" />
+          <ScalarProperty Name="Israel_Car_Entry_Count" ColumnName="Israel_Car_Entry_Count" />
+          <ScalarProperty Name="Deplomat_Car_Entry_Count" ColumnName="Deplomat_Car_Entry_Count" />
+          <ScalarProperty Name="Ambulance_Car_Entry_Count" ColumnName="Ambulance_Car_Entry_Count" />
+          <ScalarProperty Name="Bus_Car_Entry_Count" ColumnName="Bus_Car_Entry_Count" />
+          <ScalarProperty Name="Transport_Car_Entry_Count" ColumnName="Transport_Car_Entry_Count" />
+          <ScalarProperty Name="Un_Car_Entry_Count" ColumnName="Un_Car_Entry_Count" />
+          <ScalarProperty Name="Vip_Car_Entry_Count" ColumnName="Vip_Car_Entry_Count" />
+          <ScalarProperty Name="Israel_Car_Out_Count" ColumnName="Israel_Car_Out_Count" />
+          <ScalarProperty Name="Deplomat_Car_Out_Count" ColumnName="Deplomat_Car_Out_Count" />
+          <ScalarProperty Name="Ambulance_Car_Out_Count" ColumnName="Ambulance_Car_Out_Count" />
+          <ScalarProperty Name="Bus_Car_Out_Count" ColumnName="Bus_Car_Out_Count" />
+          <ScalarProperty Name="Transport_Car_Out_Count" ColumnName="Transport_Car_Out_Count" />
+          <ScalarProperty Name="Un_Car_Out_Count" ColumnName="Un_Car_Out_Count" />
+          <ScalarProperty Name="Vip_Car_Out_Count" ColumnName="Vip_Car_Out_Count" />
+          <ScalarProperty Name="Merihan_count" ColumnName="Merihan_count" />
+          <ScalarProperty Name="Siyur_count" ColumnName="Siyur_count" />
+          <ScalarProperty Name="Arrest_Count" ColumnName="Arrest_Count" />
+          <ScalarProperty Name="Sadach_Count" ColumnName="Sadach_Count" />
+          <ScalarProperty Name="Hablan_Count" ColumnName="Hablan_Count" />
+          <ScalarProperty Name="Calban_Count" ColumnName="Calban_Count" />
+          <ScalarProperty Name="Delay_Count" ColumnName="Delay_Count" />
+          <ScalarProperty Name="Charig_Count" ColumnName="Charig_Count" />
+          <ScalarProperty Name="Hapsad_Count" ColumnName="Hapsad_Count" />
+          <ScalarProperty Name="Rechev_check_Count" ColumnName="Rechev_check_Count" />
+          <ScalarProperty Name="Tenua_Psm_Count" ColumnName="Tenua_Psm_Count" />
+          <ScalarProperty Name="Tenua_Psila_Count" ColumnName="Tenua_Psila_Count" />
+          <ScalarProperty Name="Tenua_Td_Count" ColumnName="Tenua_Td_Count" />
+          <ScalarProperty Name="Tenua_Bet_Mishpat_Count" ColumnName="Tenua_Bet_Mishpat_Count" />
+          <ScalarProperty Name="Tenua_Cars_Down_Count" ColumnName="Tenua_Cars_Down_Count" />
+          <ScalarProperty Name="Tenua_license_Count" ColumnName="Tenua_license_Count" />
+          <ScalarProperty Name="Tenua_Reports_count" ColumnName="Tenua_Reports_count" />
+          <ScalarProperty Name="Biometry_count" ColumnName="Biometry_count" />
+          <ScalarProperty Name="Biometry_Success_count" ColumnName="Biometry_Success_count" />
+          <ScalarProperty Name="Biometry_Harabs_Count" ColumnName="Biometry_Harabs_Count" />
+          <ScalarProperty Name="Exercise_Count" ColumnName="Exercise_Count" />
+          <ScalarProperty Name="Exercise_Success_count" ColumnName="Exercise_Success_count" />
+          <ScalarProperty Name="Exercise_Failed_count" ColumnName="Exercise_Failed_count" />
+          <ScalarProperty Name="Exercise_Commants" ColumnName="Exercise_Commants" />
+          <ScalarProperty Name="Alef_blue_Count" ColumnName="Alef_blue_Count" />
+          <ScalarProperty Name="Alef_Security_Count" ColumnName="Alef_Security_Count" />
+          <ScalarProperty Name="Alef_Matak_Count" ColumnName="Alef_Matak_Count" />
+          <ScalarProperty Name="Alef_Mz_Count" ColumnName="Alef_Mz_Count" />
+          <ScalarProperty Name="Alef_Magav_count" ColumnName="Alef_Magav_count" />
+          <ScalarProperty Name="Alef_Else_Count" ColumnName="Alef_Else_Count" />
+          <ScalarProperty Name="Bait_blue_Count" ColumnName="Bait_blue_Count" />
+          <ScalarProperty Name="Bait_Security_Count" ColumnName="Bait_Security_Count" />
+          <ScalarProperty Name="Bait_Matak_Count" ColumnName="Bait_Matak_Count" />
+          <ScalarProperty Name="Bait_Mz_Count" ColumnName="Bait_Mz_Count" />
+          <ScalarProperty Name="Bait_Magav_count" ColumnName="Bait_Magav_count" />
+          <ScalarProperty Name="Bait_Else_Count" ColumnName="Bait_Else_Count" />
+          <ScalarProperty Name="Gimel_blue_Count" ColumnName="Gimel_blue_Count" />
+          <ScalarProperty Name="Gimel_Security_Count" ColumnName="Gimel_Security_Count" />
+          <ScalarProperty Name="Gimel_Matak_Count" ColumnName="Gimel_Matak_Count" />
+          <ScalarProperty Name="Gimel_Mz_Count" ColumnName="Gimel_Mz_Count" />
+          <ScalarProperty Name="Gimel_Magav_count" ColumnName="Gimel_Magav_count" />
+          <ScalarProperty Name="Gimel_Else_Count" ColumnName="Gimel_Else_Count" />
+          <ScalarProperty Name="General_Comment" ColumnName="General_Comment" />
+          <ScalarProperty Name="Kod_Maavar" ColumnName="Kod_Maavar" />
+          <ScalarProperty Name="Shem_Maavar" ColumnName="Shem_Maavar" />
+          <ScalarProperty Name="Kod_Gizra" ColumnName="Kod_Gizra" />
+          <ScalarProperty Name="Shem_Gizra" ColumnName="Shem_Gizra" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Spp_GetTimeAvgByMaavarID" FunctionName="MaavarimjerModel.Store.Spp_GetTimeAvgByMaavarID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MaavarimjerModel.Spp_GetTimeAvgByMaavarID_Result">
+          <ScalarProperty Name="TimeAvg_ID" ColumnName="TimeAvg_ID" />
+          <ScalarProperty Name="Maavar_ID" ColumnName="Maavar_ID" />
+          <ScalarProperty Name="Acivity_Date" ColumnName="Acivity_Date" />
+          <ScalarProperty Name="Hour_Check" ColumnName="Hour_Check" />
+          <ScalarProperty Name="Avg_Car_count" ColumnName="Avg_Car_count" />
+          <ScalarProperty Name="Avg_Leg_count" ColumnName="Avg_Leg_count" />
+          <ScalarProperty Name="Shem_Maavar" ColumnName="Shem_Maavar" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Spp_GetEruimByMaavarID" FunctionName="MaavarimjerModel.Store.Spp_GetEruimByMaavarID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MaavarimjerModel.Spp_GetEruimByMaavarID_Result">
+          <ScalarProperty Name="Erua_ID" ColumnName="Erua_ID" />
+          <ScalarProperty Name="Maavar_ID" ColumnName="Maavar_ID" />
+          <ScalarProperty Name="Kod_Erua" ColumnName="Kod_Erua" />
+          <ScalarProperty Name="Erua_Hour" ColumnName="Erua_Hour" />
+          <ScalarProperty Name="Erua_count" ColumnName="Erua_count" />
+          <ScalarProperty Name="Shem_Erua" ColumnName="Shem_Erua" />
+          <ScalarProperty Name="Shem_Maavar" ColumnName="Shem_Maavar" />
+          <ScalarProperty Name="Erua_comment" ColumnName="Erua_comment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Spp_GetTpisotByMaavarID" FunctionName="MaavarimjerModel.Store.Spp_GetTpisotByMaavarID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MaavarimjerModel.Spp_GetTpisotByMaavarID_Result">
+          <ScalarProperty Name="Tpisa_ID" ColumnName="Tpisa_ID" />
+          <ScalarProperty Name="Maavar_ID" ColumnName="Maavar_ID" />
+          <ScalarProperty Name="Kod_Tpisa" ColumnName="Kod_Tpisa" />
+          <ScalarProperty Name="Tpisa_count" ColumnName="Tpisa_count" />
+          <ScalarProperty Name="Shem_Tpisa" ColumnName="Shem_Tpisa" />
+          <ScalarProperty Name="Shem_Maavar" ColumnName="Shem_Maavar" />
+          <ScalarProperty Name="Tpisa_comment" ColumnName="Tpisa_comment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="T_Person">
+      <EntityTypeMapping TypeName="MaavarimjerModel.T_Person">
+        <MappingFragment StoreEntitySet="T_Person">
+          <ScalarProperty Name="Person_Name" ColumnName="Person_Name" />
+          <ScalarProperty Name="Hour_Pass" ColumnName="Hour_Pass" />
+          <ScalarProperty Name="Maavar_ID" ColumnName="Maavar_ID" />
+          <ScalarProperty Name="Person_ID" ColumnName="Person_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Spp_RemoveItemByIDs" FunctionName="MaavarimjerModel.Store.Spp_RemoveItemByIDs" />
+    <FunctionImportMapping FunctionImportName="Spp_GetPersonByMaavarID" FunctionName="MaavarimjerModel.Store.Spp_GetPersonByMaavarID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MaavarimjerModel.Spp_GetPersonByMaavarID_Result">
+          <ScalarProperty Name="Person_ID" ColumnName="Person_ID" />
+          <ScalarProperty Name="Maavar_ID" ColumnName="Maavar_ID" />
+          <ScalarProperty Name="Acivity_Date" ColumnName="Acivity_Date" />
+          <ScalarProperty Name="Hour_Pass" ColumnName="Hour_Pass" />
+          <ScalarProperty Name="Person_Name" ColumnName="Person_Name" />
+          <ScalarProperty Name="Shem_Maavar" ColumnName="Shem_Maavar" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Spp_GetSumMaavarByDate" FunctionName="MaavarimjerModel.Store.Spp_GetSumMaavarByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MaavarimjerModel.Spp_GetSumMaavarByDate_Result">
+          <ScalarProperty Name="Shem_Maavar" ColumnName="Shem_Maavar" />
+          <ScalarProperty Name="KodMaavar" ColumnName="KodMaavar" />
+          <ScalarProperty Name="Israel_Leg_Entry_Count" ColumnName="Israel_Leg_Entry_Count" />
+          <ScalarProperty Name="Tourist_Leg_Entry_Count" ColumnName="Tourist_Leg_Entry_Count" />
+          <ScalarProperty Name="Palastaine_Leg_Entry_Count" ColumnName="Palastaine_Leg_Entry_Count" />
+          <ScalarProperty Name="Deplomat_Leg_Entry_Count" ColumnName="Deplomat_Leg_Entry_Count" />
+          <ScalarProperty Name="Un_Leg_Entry_Count" ColumnName="Un_Leg_Entry_Count" />
+          <ScalarProperty Name="Vip_Leg_Entry_Count" ColumnName="Vip_Leg_Entry_Count" />
+          <ScalarProperty Name="Israel_Leg_Out_Count" ColumnName="Israel_Leg_Out_Count" />
+          <ScalarProperty Name="Tourist_Leg_Out_Count" ColumnName="Tourist_Leg_Out_Count" />
+          <ScalarProperty Name="Palastaine_Leg_Out_Count" ColumnName="Palastaine_Leg_Out_Count" />
+          <ScalarProperty Name="Deplomat_Leg_Out_Count" ColumnName="Deplomat_Leg_Out_Count" />
+          <ScalarProperty Name="Un_Leg_Out_Count" ColumnName="Un_Leg_Out_Count" />
+          <ScalarProperty Name="Vip_Leg_Out_Count" ColumnName="Vip_Leg_Out_Count" />
+          <ScalarProperty Name="Israel_Car_Entry_Count" ColumnName="Israel_Car_Entry_Count" />
+          <ScalarProperty Name="Deplomat_Car_Entry_Count" ColumnName="Deplomat_Car_Entry_Count" />
+          <ScalarProperty Name="Ambulance_Car_Entry_Count" ColumnName="Ambulance_Car_Entry_Count" />
+          <ScalarProperty Name="Bus_Car_Entry_Count" ColumnName="Bus_Car_Entry_Count" />
+          <ScalarProperty Name="Transport_Car_Entry_Count" ColumnName="Transport_Car_Entry_Count" />
+          <ScalarProperty Name="Un_Car_Entry_Count" ColumnName="Un_Car_Entry_Count" />
+          <ScalarProperty Name="Vip_Car_Entry_Count" ColumnName="Vip_Car_Entry_Count" />
+          <ScalarProperty Name="Israel_Car_Out_Count" ColumnName="Israel_Car_Out_Count" />
+          <ScalarProperty Name="Deplomat_Car_Out_Count" ColumnName="Deplomat_Car_Out_Count" />
+          <ScalarProperty Name="Ambulance_Car_Out_Count" ColumnName="Ambulance_Car_Out_Count" />
+          <ScalarProperty Name="Bus_Car_Out_Count" ColumnName="Bus_Car_Out_Count" />
+          <ScalarProperty Name="Transport_Car_Out_Count" ColumnName="Transport_Car_Out_Count" />
+          <ScalarProperty Name="Un_Car_Out_Count" ColumnName="Un_Car_Out_Count" />
+          <ScalarProperty Name="Vip_Car_Out_Count" ColumnName="Vip_Car_Out_Count" />
+          <ScalarProperty Name="Merihan_Count" ColumnName="Merihan_Count" />
+          <ScalarProperty Name="Siyur_Count" ColumnName="Siyur_Count" />
+          <ScalarProperty Name="Arrest_Count" ColumnName="Arrest_Count" />
+          <ScalarProperty Name="Sadach_Count" ColumnName="Sadach_Count" />
+          <ScalarProperty Name="Hablan_Count" ColumnName="Hablan_Count" />
+          <ScalarProperty Name="Calban_Count" ColumnName="Calban_Count" />
+          <ScalarProperty Name="Delay_Count" ColumnName="Delay_Count" />
+          <ScalarProperty Name="Charig_Count" ColumnName="Charig_Count" />
+          <ScalarProperty Name="Hapsad_Count" ColumnName="Hapsad_Count" />
+          <ScalarProperty Name="Rechev_check_Count" ColumnName="Rechev_check_Count" />
+          <ScalarProperty Name="Tenua_Psm_Count" ColumnName="Tenua_Psm_Count" />
+          <ScalarProperty Name="Tenua_Psila_Count" ColumnName="Tenua_Psila_Count" />
+          <ScalarProperty Name="Tenua_Td_Count" ColumnName="Tenua_Td_Count" />
+          <ScalarProperty Name="Tenua_Bet_Mishpat_Count" ColumnName="Tenua_Bet_Mishpat_Count" />
+          <ScalarProperty Name="Tenua_Cars_Down_Count" ColumnName="Tenua_Cars_Down_Count" />
+          <ScalarProperty Name="Tenua_license_Count" ColumnName="Tenua_license_Count" />
+          <ScalarProperty Name="Tenua_Reports_Count" ColumnName="Tenua_Reports_Count" />
+          <ScalarProperty Name="Biometry_Count" ColumnName="Biometry_Count" />
+          <ScalarProperty Name="Biometry_Success_Count" ColumnName="Biometry_Success_Count" />
+          <ScalarProperty Name="Biometry_Harabs_Count" ColumnName="Biometry_Harabs_Count" />
+          <ScalarProperty Name="Exercise_Count" ColumnName="Exercise_Count" />
+          <ScalarProperty Name="Exercise_Success_Count" ColumnName="Exercise_Success_Count" />
+          <ScalarProperty Name="Exercise_Failed_Count" ColumnName="Exercise_Failed_Count" />
+          <ScalarProperty Name="Alef_blue_Count" ColumnName="Alef_blue_Count" />
+          <ScalarProperty Name="Alef_Security_Count" ColumnName="Alef_Security_Count" />
+          <ScalarProperty Name="Alef_Matak_Count" ColumnName="Alef_Matak_Count" />
+          <ScalarProperty Name="Alef_Mz_Count" ColumnName="Alef_Mz_Count" />
+          <ScalarProperty Name="Alef_Magav_Count" ColumnName="Alef_Magav_Count" />
+          <ScalarProperty Name="Alef_Else_Count" ColumnName="Alef_Else_Count" />
+          <ScalarProperty Name="Bait_blue_Count" ColumnName="Bait_blue_Count" />
+          <ScalarProperty Name="Bait_Security_Count" ColumnName="Bait_Security_Count" />
+          <ScalarProperty Name="Bait_Matak_Count" ColumnName="Bait_Matak_Count" />
+          <ScalarProperty Name="Bait_Mz_Count" ColumnName="Bait_Mz_Count" />
+          <ScalarProperty Name="Bait_Magav_Count" ColumnName="Bait_Magav_Count" />
+          <ScalarProperty Name="Bait_Else_Count" ColumnName="Bait_Else_Count" />
+          <ScalarProperty Name="Gimel_blue_Count" ColumnName="Gimel_blue_Count" />
+          <ScalarProperty Name="Gimel_Security_Count" ColumnName="Gimel_Security_Count" />
+          <ScalarProperty Name="Gimel_Matak_Count" ColumnName="Gimel_Matak_Count" />
+          <ScalarProperty Name="Gimel_Mz_Count" ColumnName="Gimel_Mz_Count" />
+          <ScalarProperty Name="Gimel_Magav_Count" ColumnName="Gimel_Magav_Count" />
+          <ScalarProperty Name="Gimel_Else_Count" ColumnName="Gimel_Else_Count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Spp_GetSumTimeAvgByDate" FunctionName="MaavarimjerModel.Store.Spp_GetSumTimeAvgByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MaavarimjerModel.Spp_GetSumTimeAvgByDate_Result">
+          <ScalarProperty Name="Shem_Maavar" ColumnName="Shem_Maavar" />
+          <ScalarProperty Name="KodMaavar" ColumnName="KodMaavar" />
+          <ScalarProperty Name="Avg_Car_count" ColumnName="Avg_Car_count" />
+          <ScalarProperty Name="Avg_Leg_count" ColumnName="Avg_Leg_count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Spp_GetSumTpisotByDate" FunctionName="MaavarimjerModel.Store.Spp_GetSumTpisotByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MaavarimjerModel.Spp_GetSumTpisotByDate_Result">
+          <ScalarProperty Name="Shem_Maavar" ColumnName="Shem_Maavar" />
+          <ScalarProperty Name="Shem_Tpisa" ColumnName="Shem_Tpisa" />
+          <ScalarProperty Name="KodMaavar" ColumnName="KodMaavar" />
+          <ScalarProperty Name="Kod_Tpisa" ColumnName="Kod_Tpisa" />
+          <ScalarProperty Name="Tpisa_count" ColumnName="Tpisa_count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Spp_GetEruimByDate" FunctionName="MaavarimjerModel.Store.Spp_GetEruimByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MaavarimjerModel.Spp_GetEruimByDate_Result">
+          <ScalarProperty Name="Shem_Maavar" ColumnName="Shem_Maavar" />
+          <ScalarProperty Name="Maavar_ID" ColumnName="Maavar_ID" />
+          <ScalarProperty Name="Kod_Erua" ColumnName="Kod_Erua" />
+          <ScalarProperty Name="Erua_Hour" ColumnName="Erua_Hour" />
+          <ScalarProperty Name="Erua_count" ColumnName="Erua_count" />
+          <ScalarProperty Name="Shem_Erua" ColumnName="Shem_Erua" />
+          <ScalarProperty Name="Erua_comment" ColumnName="Erua_comment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="T_Eruim">
+      <EntityTypeMapping TypeName="MaavarimjerModel.T_Eruim">
+        <MappingFragment StoreEntitySet="T_Eruim">
+          <ScalarProperty Name="Erua_comment" ColumnName="Erua_comment" />
+          <ScalarProperty Name="Erua_count" ColumnName="Erua_count" />
+          <ScalarProperty Name="Erua_Hour" ColumnName="Erua_Hour" />
+          <ScalarProperty Name="Kod_Erua" ColumnName="Kod_Erua" />
+          <ScalarProperty Name="Maavar_ID" ColumnName="Maavar_ID" />
+          <ScalarProperty Name="Erua_ID" ColumnName="Erua_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Maavarim">
+      <EntityTypeMapping TypeName="MaavarimjerModel.T_Maavarim">
+        <MappingFragment StoreEntitySet="T_Maavarim">
+          <ScalarProperty Name="General_Comment" ColumnName="General_Comment" />
+          <ScalarProperty Name="Gimel_Else_Count" ColumnName="Gimel_Else_Count" />
+          <ScalarProperty Name="Gimel_Magav_count" ColumnName="Gimel_Magav_count" />
+          <ScalarProperty Name="Gimel_Mz_Count" ColumnName="Gimel_Mz_Count" />
+          <ScalarProperty Name="Gimel_Matak_Count" ColumnName="Gimel_Matak_Count" />
+          <ScalarProperty Name="Gimel_Security_Count" ColumnName="Gimel_Security_Count" />
+          <ScalarProperty Name="Gimel_blue_Count" ColumnName="Gimel_blue_Count" />
+          <ScalarProperty Name="Bait_Else_Count" ColumnName="Bait_Else_Count" />
+          <ScalarProperty Name="Bait_Magav_count" ColumnName="Bait_Magav_count" />
+          <ScalarProperty Name="Bait_Mz_Count" ColumnName="Bait_Mz_Count" />
+          <ScalarProperty Name="Bait_Matak_Count" ColumnName="Bait_Matak_Count" />
+          <ScalarProperty Name="Bait_Security_Count" ColumnName="Bait_Security_Count" />
+          <ScalarProperty Name="Bait_blue_Count" ColumnName="Bait_blue_Count" />
+          <ScalarProperty Name="Alef_Else_Count" ColumnName="Alef_Else_Count" />
+          <ScalarProperty Name="Alef_Magav_count" ColumnName="Alef_Magav_count" />
+          <ScalarProperty Name="Alef_Mz_Count" ColumnName="Alef_Mz_Count" />
+          <ScalarProperty Name="Alef_Matak_Count" ColumnName="Alef_Matak_Count" />
+          <ScalarProperty Name="Alef_Security_Count" ColumnName="Alef_Security_Count" />
+          <ScalarProperty Name="Alef_blue_Count" ColumnName="Alef_blue_Count" />
+          <ScalarProperty Name="Exercise_Commants" ColumnName="Exercise_Commants" />
+          <ScalarProperty Name="Exercise_Failed_count" ColumnName="Exercise_Failed_count" />
+          <ScalarProperty Name="Exercise_Success_count" ColumnName="Exercise_Success_count" />
+          <ScalarProperty Name="Exercise_Count" ColumnName="Exercise_Count" />
+          <ScalarProperty Name="Biometry_Harabs_Count" ColumnName="Biometry_Harabs_Count" />
+          <ScalarProperty Name="Biometry_Success_count" ColumnName="Biometry_Success_count" />
+          <ScalarProperty Name="Biometry_count" ColumnName="Biometry_count" />
+          <ScalarProperty Name="Tenua_Reports_count" ColumnName="Tenua_Reports_count" />
+          <ScalarProperty Name="Tenua_license_Count" ColumnName="Tenua_license_Count" />
+          <ScalarProperty Name="Tenua_Cars_Down_Count" ColumnName="Tenua_Cars_Down_Count" />
+          <ScalarProperty Name="Tenua_Bet_Mishpat_Count" ColumnName="Tenua_Bet_Mishpat_Count" />
+          <ScalarProperty Name="Tenua_Td_Count" ColumnName="Tenua_Td_Count" />
+          <ScalarProperty Name="Tenua_Psila_Count" ColumnName="Tenua_Psila_Count" />
+          <ScalarProperty Name="Tenua_Psm_Count" ColumnName="Tenua_Psm_Count" />
+          <ScalarProperty Name="Rechev_check_Count" ColumnName="Rechev_check_Count" />
+          <ScalarProperty Name="Hapsad_Count" ColumnName="Hapsad_Count" />
+          <ScalarProperty Name="Charig_Count" ColumnName="Charig_Count" />
+          <ScalarProperty Name="Delay_Count" ColumnName="Delay_Count" />
+          <ScalarProperty Name="Calban_Count" ColumnName="Calban_Count" />
+          <ScalarProperty Name="Hablan_Count" ColumnName="Hablan_Count" />
+          <ScalarProperty Name="Sadach_Count" ColumnName="Sadach_Count" />
+          <ScalarProperty Name="Arrest_Count" ColumnName="Arrest_Count" />
+          <ScalarProperty Name="Siyur_count" ColumnName="Siyur_count" />
+          <ScalarProperty Name="Merihan_count" ColumnName="Merihan_count" />
+          <ScalarProperty Name="Vip_Car_Out_Count" ColumnName="Vip_Car_Out_Count" />
+          <ScalarProperty Name="Un_Car_Out_Count" ColumnName="Un_Car_Out_Count" />
+          <ScalarProperty Name="Transport_Car_Out_Count" ColumnName="Transport_Car_Out_Count" />
+          <ScalarProperty Name="Bus_Car_Out_Count" ColumnName="Bus_Car_Out_Count" />
+          <ScalarProperty Name="Ambulance_Car_Out_Count" ColumnName="Ambulance_Car_Out_Count" />
+          <ScalarProperty Name="Deplomat_Car_Out_Count" ColumnName="Deplomat_Car_Out_Count" />
+          <ScalarProperty Name="Israel_Car_Out_Count" ColumnName="Israel_Car_Out_Count" />
+          <ScalarProperty Name="Vip_Car_Entry_Count" ColumnName="Vip_Car_Entry_Count" />
+          <ScalarProperty Name="Un_Car_Entry_Count" ColumnName="Un_Car_Entry_Count" />
+          <ScalarProperty Name="Transport_Car_Entry_Count" ColumnName="Transport_Car_Entry_Count" />
+          <ScalarProperty Name="Bus_Car_Entry_Count" ColumnName="Bus_Car_Entry_Count" />
+          <ScalarProperty Name="Ambulance_Car_Entry_Count" ColumnName="Ambulance_Car_Entry_Count" />
+          <ScalarProperty Name="Deplomat_Car_Entry_Count" ColumnName="Deplomat_Car_Entry_Count" />
+          <ScalarProperty Name="Israel_Car_Entry_Count" ColumnName="Israel_Car_Entry_Count" />
+          <ScalarProperty Name="Vip_Leg_Out_Count" ColumnName="Vip_Leg_Out_Count" />
+          <ScalarProperty Name="Un_Leg_Out_Count" ColumnName="Un_Leg_Out_Count" />
+          <ScalarProperty Name="Deplomat_Leg_Out_Count" ColumnName="Deplomat_Leg_Out_Count" />
+          <ScalarProperty Name="Palastaine_Leg_Out_Count" ColumnName="Palastaine_Leg_Out_Count" />
+          <ScalarProperty Name="Tourist_Leg_Out_Count" ColumnName="Tourist_Leg_Out_Count" />
+          <ScalarProperty Name="Israel_Leg_Out_Count" ColumnName="Israel_Leg_Out_Count" />
+          <ScalarProperty Name="Vip_Leg_Entry_Count" ColumnName="Vip_Leg_Entry_Count" />
+          <ScalarProperty Name="Un_Leg_Entry_Count" ColumnName="Un_Leg_Entry_Count" />
+          <ScalarProperty Name="Deplomat_Leg_Entry_Count" ColumnName="Deplomat_Leg_Entry_Count" />
+          <ScalarProperty Name="Palastaine_Leg_Entry_Count" ColumnName="Palastaine_Leg_Entry_Count" />
+          <ScalarProperty Name="Tourist_Leg_Entry_Count" ColumnName="Tourist_Leg_Entry_Count" />
+          <ScalarProperty Name="Israel_Leg_Entry_Count" ColumnName="Israel_Leg_Entry_Count" />
+          <ScalarProperty Name="Acivity_Date" ColumnName="Acivity_Date" />
+          <ScalarProperty Name="Gizra_ID" ColumnName="Gizra_ID" />
+          <ScalarProperty Name="KodMaavar" ColumnName="KodMaavar" />
+          <ScalarProperty Name="Maavar_ID" ColumnName="Maavar_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Time_Avg">
+      <EntityTypeMapping TypeName="MaavarimjerModel.T_Time_Avg">
+        <MappingFragment StoreEntitySet="T_Time_Avg">
+          <ScalarProperty Name="Avg_Leg_count" ColumnName="Avg_Leg_count" />
+          <ScalarProperty Name="Avg_Car_count" ColumnName="Avg_Car_count" />
+          <ScalarProperty Name="Hour_Check" ColumnName="Hour_Check" />
+          <ScalarProperty Name="Acivity_Date" ColumnName="Acivity_Date" />
+          <ScalarProperty Name="Maavar_ID" ColumnName="Maavar_ID" />
+          <ScalarProperty Name="TimeAvg_ID" ColumnName="TimeAvg_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

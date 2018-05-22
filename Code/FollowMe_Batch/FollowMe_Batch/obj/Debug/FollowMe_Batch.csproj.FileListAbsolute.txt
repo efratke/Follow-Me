@@ -1,0 +1,13 @@
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\שלי\FollowMe_Batch\FollowMe_Batch\bin\Debug\FollowMe_Batch.exe.config
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\שלי\FollowMe_Batch\FollowMe_Batch\bin\Debug\FollowMe_Batch.exe
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\שלי\FollowMe_Batch\FollowMe_Batch\bin\Debug\FollowMe_Batch.pdb
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\שלי\FollowMe_Batch\FollowMe_Batch\bin\Debug\EntityFramework.dll
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\שלי\FollowMe_Batch\FollowMe_Batch\bin\Debug\EntityFramework.xml
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\שלי\FollowMe_Batch\FollowMe_Batch\obj\Debug\FollowMe_Batch.csprojResolveAssemblyReference.cache
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\שלי\FollowMe_Batch\FollowMe_Batch\obj\Debug\FollowMe_Batch.Properties.Resources.resources
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\שלי\FollowMe_Batch\FollowMe_Batch\obj\Debug\FollowMe_Batch.csproj.GenerateResource.Cache
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\שלי\FollowMe_Batch\FollowMe_Batch\obj\Debug\FollowMe_Batch.exe
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\שלי\FollowMe_Batch\FollowMe_Batch\obj\Debug\FollowMe_Batch.pdb
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FollowMe_Batch\FollowMe_Batch\bin\Debug\FollowMe_Batch.exe.config
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FollowMe_Batch\FollowMe_Batch\obj\Debug\FollowMe_Batch.exe
+C:\Users\owner\Documents\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FollowMe_Batch\FollowMe_Batch\obj\Debug\FollowMe_Batch.pdb

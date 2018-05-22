@@ -1,0 +1,50 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+
+
+ 
+<asp:Button runat="server" Font-Names="Maiandra GD"  Font-Size=X-Large text-align=center  />
+<asp:TextBox runat="server" Font-Size=X-Large Font-Names="Maiandra GD"  BorderColor="#70a5bc"
+ foreColor=#1b105b BorderWidth="1.5">
+ </asp:TextBox>
+<asp:Label Font-Names="Maiandra GD" runat="server" Font-Size=X-Large  ForeColor=#1b105b>
+</asp:Label>
+<asp:GridView
+EmptyDataText=" / " FooterStyle-HorizontalAlign="Center" Font-Names="Maiandra GD" RowStyle-HorizontalAlign="Center"
+ HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="true" 
+BorderColor=#1b105b Font-Size=X-Large GridLines="Both" BorderWidth="1px"
+ runat="server" />
+ 
+       <asp:CheckBoxList  Width="200" Font-Names="Maiandra GD" Height="25" Font-Size="X-Large"   BorderColor="#70a5bc"  runat="server"
+         style="direction: ltr">
+    </asp:CheckBoxList> 
+<asp:RequiredFieldValidator runat="server" Font-Names="Maiandra GD" Font-Size="X-Large" ForeColor="red"
+Display="Dynamic"/>
+<asp:CompareValidator runat="server" Font-Names="Maiandra GD" Font-Size="X-Large" ForeColor="red" Display="Dynamic"/>
+<asp:CustomValidator runat="server" Font-Names="Maiandra GD" Font-Size="X-Large" ForeColor="red"
+Display="Dynamic"/>
+<asp:RangeValidator runat="server" Font-Names="Maiandra GD" Font-Size="X-Large" ForeColor="red"
+Display="Dynamic"/>
+<asp:RegularExpressionValidator runat="server" Font-Names="Maiandra GD" Font-Size="X-Large" ForeColor="red"
+Display="Dynamic"/>
+ <asp:LinkButton  runat="server" Font-Names="Maiandra GD" Font-Size=X-Large />
+   <asp:DropDownList runat="server"  Width="200" Font-Names="Maiandra GD" Font-Size="20" foreColor="#1b105b">
+                </asp:DropDownList>
+
+            
+
+           

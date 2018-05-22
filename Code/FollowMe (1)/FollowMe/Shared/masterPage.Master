@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterPage.Master.cs" Inherits="FollowMe.Shared.masterPage" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../Styles/MyMasterPage.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head_" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="Body1" runat="server" class="body">
+    <asp:Image ID="imgBack" runat="server" ImageUrl="../Images/backgroundOpac.jpg" />
+
+    <form id="Form2" runat="server">
+        <div id="framecontentTop">
+            <asp:Image ID="Image1" runat="server" ImageUrl="../Images/aka_logo.jpg" ImageAlign="Right"
+                Width="300px" Height="150px" />
+            <asp:Image ID="Image2" runat="server" ImageUrl="../Images/Title.png" ImageAlign="Left" Width="300px" Height="150px" />
+        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server" />
+         </div>
+    </form>
+</body>
+</html>

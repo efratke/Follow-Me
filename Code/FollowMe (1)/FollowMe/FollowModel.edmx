@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FollowModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="FollowModelStoreContainer">
+          <EntitySet Name="ActiveAntenna" EntityType="FollowModel.Store.ActiveAntenna" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ActiveOrder" EntityType="FollowModel.Store.ActiveOrder" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Colors" EntityType="FollowModel.Store.Colors" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConnectionDetailsInStation" EntityType="FollowModel.Store.ConnectionDetailsInStation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Order" EntityType="FollowModel.Store.Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderDetails" EntityType="FollowModel.Store.OrderDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Owners" EntityType="FollowModel.Store.Owners" store:Type="Tables" store:Schema="dbo" store:Name="Owners">
+            <DefiningQuery>SELECT 
+      [Owners].[OwnerId] AS [OwnerId], 
+      [Owners].[Address] AS [Address], 
+      [Owners].[Company] AS [Company], 
+      [Owners].[Name] AS [Name], 
+      [Owners].[Pass] AS [Pass], 
+      [Owners].[Phone] AS [Phone]
+      FROM [dbo].[Owners] AS [Owners]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Process" EntityType="FollowModel.Store.Process" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProcessDetails" EntityType="FollowModel.Store.ProcessDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Readers" EntityType="FollowModel.Store.Readers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Reading" EntityType="FollowModel.Store.Reading" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Station" EntityType="FollowModel.Store.Station" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="ActiveAntenna">
+          <Key>
+            <PropertyRef Name="ActiveAntennaId" />
+          </Key>
+          <Property Name="ActiveAntennaId" Type="int" Nullable="false" />
+          <Property Name="ActiveAntennas" Type="int" />
+          <Property Name="ReadeId" Type="int" />
+        </EntityType>
+        <EntityType Name="ActiveOrder">
+          <Key>
+            <PropertyRef Name="ActiveOrderId" />
+          </Key>
+          <Property Name="ActiveOrderId" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="FinishDate" Type="datetime" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="OwnerId" Type="int" />
+          <Property Name="ProcessId" Type="int" />
+        </EntityType>
+        <EntityType Name="Colors">
+          <Key>
+            <PropertyRef Name="ColorId" />
+          </Key>
+          <Property Name="ColorId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="ConnectionDetailsInStation">
+          <Key>
+            <PropertyRef Name="ConnectionDetailsInStationId" />
+          </Key>
+          <Property Name="ConnectionDetailsInStationId" Type="int" Nullable="false" />
+          <Property Name="Antena" Type="int" />
+          <Property Name="ReadeId" Type="int" />
+          <Property Name="StationId" Type="int" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="OwnerId" Type="int" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="OrderDetailId" />
+          </Key>
+          <Property Name="OrderDetailId" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="FirstEPC" Type="varchar(max)" />
+          <Property Name="LastEPC" Type="varchar(max)" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="ProcessId" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\OWNER\DOCUMENTS\לאה\לימודים\תואר ראשון בהנדסה\שנה ה\פרוייקט גמר\לאה\FOLLOWME\FOLLOWME\APP_DATA\FOLLOWDB.MDF.dbo.Owners' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Owners">
+          <Key>
+            <PropertyRef Name="OwnerId" />
+          </Key>
+          <Property Name="OwnerId" Type="int" Nullable="false" />
+          <Property Name="Address" Type="varchar(max)" />
+          <Property Name="Company" Type="varchar(max)" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="Pass" Type="varchar(max)" />
+          <Property Name="Phone" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Process">
+          <Key>
+            <PropertyRef Name="ProcessId" />
+          </Key>
+          <Property Name="ProcessId" Type="int" Nullable="false" />
+          <Property Name="ColorId" Type="int" />
+          <Property Name="Name" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="ProcessDetails">
+          <Key>
+            <PropertyRef Name="ProcessDetailId" />
+          </Key>
+          <Property Name="ProcessDetailId" Type="int" Nullable="false" />
+          <Property Name="Minutes" Type="int" />
+          <Property Name="MoreDetails" Type="varchar(max)" />
+          <Property Name="Station" Type="int" />
+        </EntityType>
+        <EntityType Name="Readers">
+          <Key>
+            <PropertyRef Name="ReaderId" />
+          </Key>
+          <Property Name="ReaderId" Type="int" Nullable="false" />
+          <Property Name="Area" Type="varchar(max)" />
+          <Property Name="IP" Type="varchar(max)" />
+          <Property Name="Name" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Reading">
+          <Key>
+            <PropertyRef Name="ReadingId" />
+          </Key>
+          <Property Name="ReadingId" Type="int" Nullable="false" />
+          <Property Name="Antena" Type="int" />
+          <Property Name="EPC" Type="varchar(max)" />
+          <Property Name="REderId" Type="int" />
+          <Property Name="Time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Station">
+          <Key>
+            <PropertyRef Name="StationId" />
+          </Key>
+          <Property Name="StationId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="FollowModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="FollowModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ActiveAntenna" EntityType="FollowModel.ActiveAntenna" />
+          <EntitySet Name="ActiveOrder" EntityType="FollowModel.ActiveOrder" />
+          <EntitySet Name="Colors" EntityType="FollowModel.Colors" />
+          <EntitySet Name="ConnectionDetailsInStation" EntityType="FollowModel.ConnectionDetailsInStation" />
+          <EntitySet Name="Order" EntityType="FollowModel.Order" />
+          <EntitySet Name="OrderDetails" EntityType="FollowModel.OrderDetails" />
+          <EntitySet Name="Owners" EntityType="FollowModel.Owners" />
+          <EntitySet Name="Process" EntityType="FollowModel.Process" />
+          <EntitySet Name="ProcessDetails" EntityType="FollowModel.ProcessDetails" />
+          <EntitySet Name="Readers" EntityType="FollowModel.Readers" />
+          <EntitySet Name="Reading" EntityType="FollowModel.Reading" />
+          <EntitySet Name="Station" EntityType="FollowModel.Station" />
+        </EntityContainer>
+        <EntityType Name="ActiveAntenna">
+          <Key>
+            <PropertyRef Name="ActiveAntennaId" />
+          </Key>
+          <Property Type="Int32" Name="ActiveAntennaId" Nullable="false" />
+          <Property Type="Int32" Name="ActiveAntennas" />
+          <Property Type="Int32" Name="ReadeId" />
+        </EntityType>
+        <EntityType Name="ActiveOrder">
+          <Key>
+            <PropertyRef Name="ActiveOrderId" />
+          </Key>
+          <Property Type="Int32" Name="ActiveOrderId" Nullable="false" />
+          <Property Type="Int32" Name="Amount" />
+          <Property Type="DateTime" Name="FinishDate" Precision="3" />
+          <Property Type="DateTime" Name="OrderDate" Precision="3" />
+          <Property Type="Int32" Name="OwnerId" />
+          <Property Type="Int32" Name="ProcessId" />
+        </EntityType>
+        <EntityType Name="Colors">
+          <Key>
+            <PropertyRef Name="ColorId" />
+          </Key>
+          <Property Type="Int32" Name="ColorId" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ConnectionDetailsInStation">
+          <Key>
+            <PropertyRef Name="ConnectionDetailsInStationId" />
+          </Key>
+          <Property Type="Int32" Name="ConnectionDetailsInStationId" Nullable="false" />
+          <Property Type="Int32" Name="Antena" />
+          <Property Type="Int32" Name="ReadeId" />
+          <Property Type="Int32" Name="StationId" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Type="Int32" Name="OrderId" Nullable="false" />
+          <Property Type="DateTime" Name="Date" Precision="3" />
+          <Property Type="Int32" Name="OwnerId" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="OrderDetailId" />
+          </Key>
+          <Property Type="Int32" Name="OrderDetailId" Nullable="false" />
+          <Property Type="Int32" Name="Amount" />
+          <Property Type="String" Name="FirstEPC" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastEPC" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="OrderId" />
+          <Property Type="Int32" Name="ProcessId" />
+        </EntityType>
+        <EntityType Name="Owners">
+          <Key>
+            <PropertyRef Name="OwnerId" />
+          </Key>
+          <Property Type="Int32" Name="OwnerId" Nullable="false" />
+          <Property Type="String" Name="Address" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Company" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Pass" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Process">
+          <Key>
+            <PropertyRef Name="ProcessId" />
+          </Key>
+          <Property Type="Int32" Name="ProcessId" Nullable="false" />
+          <Property Type="Int32" Name="ColorId" />
+          <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ProcessDetails">
+          <Key>
+            <PropertyRef Name="ProcessDetailId" />
+          </Key>
+          <Property Type="Int32" Name="ProcessDetailId" Nullable="false" />
+          <Property Type="Int32" Name="Minutes" />
+          <Property Type="String" Name="MoreDetails" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Station" />
+        </EntityType>
+        <EntityType Name="Readers">
+          <Key>
+            <PropertyRef Name="ReaderId" />
+          </Key>
+          <Property Type="Int32" Name="ReaderId" Nullable="false" />
+          <Property Type="String" Name="Area" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IP" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Reading">
+          <Key>
+            <PropertyRef Name="ReadingId" />
+          </Key>
+          <Property Type="Int32" Name="ReadingId" Nullable="false" />
+          <Property Type="Int32" Name="Antena" />
+          <Property Type="String" Name="EPC" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="REderId" />
+          <Property Type="DateTime" Name="Time" Precision="3" />
+        </EntityType>
+        <EntityType Name="Station">
+          <Key>
+            <PropertyRef Name="StationId" />
+          </Key>
+          <Property Type="Int32" Name="StationId" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="FollowModel" />
+        <Alias Key="Target" Value="FollowModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="FollowModelContainer" StorageEntityContainer="FollowModelStoreContainer">
+          <EntitySetMapping Name="ActiveAntenna">
+            <EntityTypeMapping TypeName="FollowModel.ActiveAntenna">
+              <MappingFragment StoreEntitySet="ActiveAntenna">
+                <ScalarProperty Name="ReadeId" ColumnName="ReadeId" />
+                <ScalarProperty Name="ActiveAntennas" ColumnName="ActiveAntennas" />
+                <ScalarProperty Name="ActiveAntennaId" ColumnName="ActiveAntennaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActiveOrder">
+            <EntityTypeMapping TypeName="FollowModel.ActiveOrder">
+              <MappingFragment StoreEntitySet="ActiveOrder">
+                <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ActiveOrderId" ColumnName="ActiveOrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Colors">
+            <EntityTypeMapping TypeName="FollowModel.Colors">
+              <MappingFragment StoreEntitySet="Colors">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConnectionDetailsInStation">
+            <EntityTypeMapping TypeName="FollowModel.ConnectionDetailsInStation">
+              <MappingFragment StoreEntitySet="ConnectionDetailsInStation">
+                <ScalarProperty Name="StationId" ColumnName="StationId" />
+                <ScalarProperty Name="ReadeId" ColumnName="ReadeId" />
+                <ScalarProperty Name="Antena" ColumnName="Antena" />
+                <ScalarProperty Name="ConnectionDetailsInStationId" ColumnName="ConnectionDetailsInStationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="FollowModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="FollowModel.OrderDetails">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="LastEPC" ColumnName="LastEPC" />
+                <ScalarProperty Name="FirstEPC" ColumnName="FirstEPC" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="OrderDetailId" ColumnName="OrderDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Owners">
+            <EntityTypeMapping TypeName="FollowModel.Owners">
+              <MappingFragment StoreEntitySet="Owners">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Process">
+            <EntityTypeMapping TypeName="FollowModel.Process">
+              <MappingFragment StoreEntitySet="Process">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+                <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProcessDetails">
+            <EntityTypeMapping TypeName="FollowModel.ProcessDetails">
+              <MappingFragment StoreEntitySet="ProcessDetails">
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="MoreDetails" ColumnName="MoreDetails" />
+                <ScalarProperty Name="Minutes" ColumnName="Minutes" />
+                <ScalarProperty Name="ProcessDetailId" ColumnName="ProcessDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Readers">
+            <EntityTypeMapping TypeName="FollowModel.Readers">
+              <MappingFragment StoreEntitySet="Readers">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="ReaderId" ColumnName="ReaderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reading">
+            <EntityTypeMapping TypeName="FollowModel.Reading">
+              <MappingFragment StoreEntitySet="Reading">
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="REderId" ColumnName="REderId" />
+                <ScalarProperty Name="EPC" ColumnName="EPC" />
+                <ScalarProperty Name="Antena" ColumnName="Antena" />
+                <ScalarProperty Name="ReadingId" ColumnName="ReadingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Station">
+            <EntityTypeMapping TypeName="FollowModel.Station">
+              <MappingFragment StoreEntitySet="Station">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="StationId" ColumnName="StationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="FollowModel" />
+  <Alias Key="Target" Value="FollowModel.Store" />
+  <EntityContainerMapping CdmEntityContainer="FollowModelContainer" StorageEntityContainer="FollowModelStoreContainer">
+    <EntitySetMapping Name="ActiveAntenna">
+      <EntityTypeMapping TypeName="FollowModel.ActiveAntenna">
+        <MappingFragment StoreEntitySet="ActiveAntenna">
+          <ScalarProperty Name="ReadeId" ColumnName="ReadeId" />
+          <ScalarProperty Name="ActiveAntennas" ColumnName="ActiveAntennas" />
+          <ScalarProperty Name="ActiveAntennaId" ColumnName="ActiveAntennaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActiveOrder">
+      <EntityTypeMapping TypeName="FollowModel.ActiveOrder">
+        <MappingFragment StoreEntitySet="ActiveOrder">
+          <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ActiveOrderId" ColumnName="ActiveOrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colors">
+      <EntityTypeMapping TypeName="FollowModel.Colors">
+        <MappingFragment StoreEntitySet="Colors">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConnectionDetailsInStation">
+      <EntityTypeMapping TypeName="FollowModel.ConnectionDetailsInStation">
+        <MappingFragment StoreEntitySet="ConnectionDetailsInStation">
+          <ScalarProperty Name="StationId" ColumnName="StationId" />
+          <ScalarProperty Name="ReadeId" ColumnName="ReadeId" />
+          <ScalarProperty Name="Antena" ColumnName="Antena" />
+          <ScalarProperty Name="ConnectionDetailsInStationId" ColumnName="ConnectionDetailsInStationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="FollowModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="FollowModel.OrderDetails">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="LastEPC" ColumnName="LastEPC" />
+          <ScalarProperty Name="FirstEPC" ColumnName="FirstEPC" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="OrderDetailId" ColumnName="OrderDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Owners">
+      <EntityTypeMapping TypeName="FollowModel.Owners">
+        <MappingFragment StoreEntitySet="Owners">
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Process">
+      <EntityTypeMapping TypeName="FollowModel.Process">
+        <MappingFragment StoreEntitySet="Process">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+          <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcessDetails">
+      <EntityTypeMapping TypeName="FollowModel.ProcessDetails">
+        <MappingFragment StoreEntitySet="ProcessDetails">
+          <ScalarProperty Name="Station" ColumnName="Station" />
+          <ScalarProperty Name="MoreDetails" ColumnName="MoreDetails" />
+          <ScalarProperty Name="Minutes" ColumnName="Minutes" />
+          <ScalarProperty Name="ProcessDetailId" ColumnName="ProcessDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Readers">
+      <EntityTypeMapping TypeName="FollowModel.Readers">
+        <MappingFragment StoreEntitySet="Readers">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="ReaderId" ColumnName="ReaderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reading">
+      <EntityTypeMapping TypeName="FollowModel.Reading">
+        <MappingFragment StoreEntitySet="Reading">
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="REderId" ColumnName="REderId" />
+          <ScalarProperty Name="EPC" ColumnName="EPC" />
+          <ScalarProperty Name="Antena" ColumnName="Antena" />
+          <ScalarProperty Name="ReadingId" ColumnName="ReadingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Station">
+      <EntityTypeMapping TypeName="FollowModel.Station">
+        <MappingFragment StoreEntitySet="Station">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StationId" ColumnName="StationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

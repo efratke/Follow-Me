@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FollowMeDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="FollowMeDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="ActiveAntenna" EntityType="FollowMeDBModel.ActiveAntenna" />
+    <EntitySet Name="ArchiveOrder" EntityType="FollowMeDBModel.ArchiveOrder" />
+    <EntitySet Name="Colors" EntityType="FollowMeDBModel.Colors" />
+    <EntitySet Name="ConnectionDetailsInStation" EntityType="FollowMeDBModel.ConnectionDetailsInStation" />
+    <EntitySet Name="Order" EntityType="FollowMeDBModel.Order" />
+    <EntitySet Name="OrderDetails" EntityType="FollowMeDBModel.OrderDetails" />
+    <EntitySet Name="Owners" EntityType="FollowMeDBModel.Owners" />
+    <EntitySet Name="Process" EntityType="FollowMeDBModel.Process" />
+    <EntitySet Name="ProcessDetails" EntityType="FollowMeDBModel.ProcessDetails" />
+    <EntitySet Name="Readers" EntityType="FollowMeDBModel.Readers" />
+    <EntitySet Name="Reading" EntityType="FollowMeDBModel.Reading" />
+    <EntitySet Name="Station" EntityType="FollowMeDBModel.Station" />
+    <EntitySet Name="sysdiagrams" EntityType="FollowMeDBModel.sysdiagrams" />
+    <EntitySet Name="Table" EntityType="FollowMeDBModel.Table" />
+    <FunctionImport Name="ActiveAntennaSelect" ReturnType="Collection(FollowMeDBModel.ActiveAntennaSelect_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ActiveAntennasInsert">
+      <Parameter Name="Ant1" Mode="In" Type="Int32" />
+      <Parameter Name="Ant2" Mode="In" Type="Int32" />
+      <Parameter Name="Ant3" Mode="In" Type="Int32" />
+      <Parameter Name="Ant4" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AllOrdersSelect" ReturnType="Collection(FollowMeDBModel.AllOrdersSelect_Result)" />
+    <FunctionImport Name="ArchiveOrderInsert">
+      <Parameter Name="OrderId" Mode="In" Type="Int32" />
+      <Parameter Name="OwnerId" Mode="In" Type="Int32" />
+      <Parameter Name="Amount" Mode="In" Type="Int32" />
+      <Parameter Name="OrderDate" Mode="In" Type="DateTime" />
+      <Parameter Name="FinishDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="ArchiveOrdersDateSelect" ReturnType="Collection(FollowMeDBModel.ArchiveOrdersDateSelect_Result)">
+      <Parameter Name="OrderDate" Mode="In" Type="DateTime" />
+      <Parameter Name="FinishDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="ArchiveOrdersSelect" ReturnType="Collection(FollowMeDBModel.ArchiveOrdersSelect_Result)" />
+    <FunctionImport Name="ColorsInsert">
+      <Parameter Name="ColorName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ColorsSelect" ReturnType="Collection(FollowMeDBModel.ColorsSelect_Result)" />
+    <FunctionImport Name="company" ReturnType="Collection(String)">
+      <Parameter Name="company" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ConnectionDetailsInStationInsert">
+      <Parameter Name="StationId" Mode="In" Type="Int32" />
+      <Parameter Name="Antenna" Mode="In" Type="Int32" />
+      <Parameter Name="ReaderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CurrentStation" ReturnType="Collection(FollowMeDBModel.CurrentStation_Result)">
+      <Parameter Name="OrderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DateSelect" ReturnType="Collection(DateTime)">
+      <Parameter Name="pass" Mode="In" Type="String" />
+      <Parameter Name="company" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="deleteOrders">
+      <Parameter Name="OrderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="OrderDelete">
+      <Parameter Name="OrderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="OrderDetailsInsert">
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="OwnerId" Mode="In" Type="Int32" />
+      <Parameter Name="Process" Mode="In" Type="Int32" />
+      <Parameter Name="Amount" Mode="In" Type="Int32" />
+      <Parameter Name="firstEPC" Mode="In" Type="String" />
+      <Parameter Name="lastEPC" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="OrderIdSelect" ReturnType="Collection(Int32)">
+      <Parameter Name="pass" Mode="In" Type="String" />
+      <Parameter Name="company" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="OrdersDelete">
+      <Parameter Name="OrderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="OwnersInsert">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Pass" Mode="In" Type="String" />
+      <Parameter Name="Company" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="OwnersSelect" ReturnType="Collection(FollowMeDBModel.OwnersSelect_Result)" />
+    <FunctionImport Name="Pass" ReturnType="Collection(String)">
+      <Parameter Name="pass" Mode="In" Type="String" />
+      <Parameter Name="company" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProcessDetailsInsert">
+      <Parameter Name="ReaderId" Mode="In" Type="Int32" />
+      <Parameter Name="Minutes" Mode="In" Type="Int32" />
+      <Parameter Name="MoreDetails" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProcessDetailsSelect" ReturnType="Collection(FollowMeDBModel.ProcessDetailsSelect_Result)">
+      <Parameter Name="ProcessId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcessesInsert">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="ColorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcessesSelect" ReturnType="Collection(FollowMeDBModel.ProcessesSelect_Result)" />
+    <FunctionImport Name="ProcessIdSelect" ReturnType="Collection(FollowMeDBModel.ProcessIdSelect_Result)">
+      <Parameter Name="OrderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReaderDelete">
+      <Parameter Name="ReaderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReaderInsert">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Area" Mode="In" Type="String" />
+      <Parameter Name="Ip" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ReaderSelect" ReturnType="Collection(FollowMeDBModel.ReaderSelect_Result)" />
+    <FunctionImport Name="ReadingForOrderIdSelect" ReturnType="Collection(FollowMeDBModel.ReadingForOrderIdSelect_Result)">
+      <Parameter Name="EPC" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ReadingInsert">
+      <Parameter Name="EPC" Mode="In" Type="String" />
+      <Parameter Name="ReaderId" Mode="In" Type="Int32" />
+      <Parameter Name="Antena" Mode="In" Type="Int32" />
+      <Parameter Name="Time" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="ReadingSelect" ReturnType="Collection(FollowMeDBModel.ReadingSelect_Result)">
+      <Parameter Name="OrderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Showselect" ReturnType="Collection(String)">
+      <Parameter Name="ProcessId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(FollowMeDBModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(FollowMeDBModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="StationAndTime" ReturnType="Collection(FollowMeDBModel.StationAndTime_Result)">
+      <Parameter Name="ProcessId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="StationAndTimeSelect" ReturnType="Collection(FollowMeDBModel.StationAndTimeSelect_Result)">
+      <Parameter Name="ProcessId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="StationDelete">
+      <Parameter Name="StationId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="StationInsert">
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="StationSelect" ReturnType="Collection(FollowMeDBModel.StationSelect_Result)" />
+    <FunctionImport Name="StoredProcedure2" ReturnType="Collection(FollowMeDBModel.StoredProcedure2_Result)" />
+    <FunctionImport Name="TimeProcess" ReturnType="Collection(Int32)">
+      <Parameter Name="ProcessId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TimeRead" ReturnType="Collection(DateTime)">
+      <Parameter Name="OrderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TimeReadSelect" ReturnType="Collection(DateTime)">
+      <Parameter Name="OrderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="ActiveAntenna">
+    <Key>
+      <PropertyRef Name="ActiveAntennaId" />
+    </Key>
+    <Property Name="ActiveAntennaId" Type="Int32" Nullable="false" />
+    <Property Name="ActiveAntennas" Type="Int32" />
+    <Property Name="ReaderId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ArchiveOrder">
+    <Key>
+      <PropertyRef Name="ArchiveOrderId" />
+    </Key>
+    <Property Name="ArchiveOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="FinishDate" Type="DateTime" Precision="3" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="OwnerId" Type="Int32" />
+    <Property Name="ProcessId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Colors">
+    <Key>
+      <PropertyRef Name="ColorId" />
+      <PropertyRef Name="ColorName" />
+    </Key>
+    <Property Name="ColorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ColorName" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="ConnectionDetailsInStation">
+    <Key>
+      <PropertyRef Name="ConnectionDetailsInStationId" />
+    </Key>
+    <Property Name="ConnectionDetailsInStationId" Type="Int32" Nullable="false" />
+    <Property Name="Antena" Type="Int32" />
+    <Property Name="ReadeId" Type="Int32" />
+    <Property Name="StationId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="OwnerId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Name="OrderDetailId" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="FirstEPC" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="LastEPC" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OrderId" Type="Int32" />
+    <Property Name="ProcessId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Owners">
+    <Key>
+      <PropertyRef Name="OwnerId" />
+    </Key>
+    <Property Name="OwnerId" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Company" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Pass" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Process">
+    <Key>
+      <PropertyRef Name="ProcessId" />
+    </Key>
+    <Property Name="ProcessId" Type="Int32" Nullable="false" />
+    <Property Name="ColorId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ProcessDetails">
+    <Key>
+      <PropertyRef Name="ProcessDetailId" />
+    </Key>
+    <Property Name="ProcessDetailId" Type="Int32" Nullable="false" />
+    <Property Name="Minutes" Type="Int32" />
+    <Property Name="MoreDetails" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Station" Type="Int32" />
+    <Property Name="ProcessId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Readers">
+    <Key>
+      <PropertyRef Name="ReaderId" />
+    </Key>
+    <Property Name="ReaderId" Type="Int32" Nullable="false" />
+    <Property Name="Area" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="IP" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Reading">
+    <Key>
+      <PropertyRef Name="ReadingId" />
+    </Key>
+    <Property Name="ReadingId" Type="Int32" Nullable="false" />
+    <Property Name="Antena" Type="Int32" />
+    <Property Name="EPC" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="RederId" Type="Int32" />
+    <Property Name="Time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Station">
+    <Key>
+      <PropertyRef Name="StationId" />
+    </Key>
+    <Property Name="StationId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="ActiveAntennaId" />
+    </Key>
+    <Property Name="ActiveAntennaId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="ActiveAntennaSelect_Result">
+    <Property Type="Int32" Name="ReaderId" Nullable="true" />
+    <Property Type="Int32" Name="ActiveAntennas" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="AllOrdersSelect_Result">
+    <Property Type="Int32" Name="OrderId" Nullable="false" />
+    <Property Type="Int32" Name="OwnerId" Nullable="true" />
+    <Property Type="String" Name="Company" Nullable="true" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ColorName" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="Amount" Nullable="true" />
+    <Property Type="String" Name="firstEPC" Nullable="true" />
+    <Property Type="String" Name="lastEPC" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ArchiveOrdersDateSelect_Result">
+    <Property Type="Int32" Name="CustomerId" Nullable="false" />
+    <Property Type="String" Name="Company" Nullable="true" />
+    <Property Type="Int32" Name="ProcessId" Nullable="false" />
+    <Property Type="String" Name="Process_cleaner" Nullable="true" />
+    <Property Type="String" Name="Color_cleaner" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="Amount" Nullable="true" />
+    <Property Type="DateTime" Name="Order_date" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Finish_date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="ArchiveOrdersSelect_Result">
+    <Property Type="Int32" Name="CustomerId" Nullable="false" />
+    <Property Type="String" Name="Company" Nullable="true" />
+    <Property Type="Int32" Name="ProcessId" Nullable="false" />
+    <Property Type="String" Name="Process_cleaner" Nullable="true" />
+    <Property Type="String" Name="Color_cleaner" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="Amount" Nullable="true" />
+    <Property Type="DateTime" Name="Order_date" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Finish_date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="ColorsSelect_Result">
+    <Property Type="Int32" Name="ColorId" Nullable="false" />
+    <Property Type="String" Name="ColorName" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="CurrentStation_Result">
+    <Property Type="Int32" Name="StationId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="OwnersSelect_Result">
+    <Property Type="Int32" Name="OwnerId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ProcessDetailsSelect_Result">
+    <Property Type="String" Name="Process" Nullable="true" />
+    <Property Type="Int32" Name="StationId" Nullable="false" />
+    <Property Type="String" Name="Station" Nullable="true" />
+    <Property Type="Int32" Name="Minutes" Nullable="true" />
+    <Property Type="String" Name="More_details" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ProcessesSelect_Result">
+    <Property Type="Int32" Name="ProcessId" Nullable="false" />
+    <Property Type="String" Name="Process" Nullable="true" />
+    <Property Type="String" Name="Color_name" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="ProcessIdSelect_Result">
+    <Property Type="Int32" Name="ProcessId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" />
+    <Property Type="String" Name="ColorName" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="ReaderSelect_Result">
+    <Property Type="Int32" Name="ReaderId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ReadingForOrderIdSelect_Result">
+    <Property Type="Int32" Name="ReadingId" Nullable="false" />
+    <Property Type="String" Name="Station" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ReadingSelect_Result">
+    <Property Type="Int32" Name="StationId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="StationAndTime_Result">
+    <Property Type="Int32" Name="Minutes" Nullable="true" />
+    <Property Type="Int32" Name="Station" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="StationAndTimeSelect_Result">
+    <Property Type="String" Name="Station" Nullable="true" />
+    <Property Type="Int32" Name="StationId" Nullable="false" />
+    <Property Type="Int32" Name="Minutes" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="StationSelect_Result">
+    <Property Type="Int32" Name="StationId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="StoredProcedure2_Result">
+    <Property Type="String" Name="Customer" Nullable="true" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ProcessId" Nullable="true" />
+    <Property Type="String" Name="ColorName" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="Amount" Nullable="true" />
+    <Property Type="String" Name="firstEPC" Nullable="true" />
+    <Property Type="String" Name="lastEPC" Nullable="true" />
+  </ComplexType>
+</Schema>
