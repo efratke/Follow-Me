@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -90,9 +90,9 @@ namespace FollowMe.Forms
             else
             {
                 Session["edit"] = true;
-                txtName.Text = gvReaders.SelectedRow.Cells[2].Text;
-                txtArea.Text = gvReaders.SelectedRow.Cells[3].Text;
-                txtIp.Text = gvReaders.SelectedRow.Cells[4].Text;
+                txtName.Text = gvReaders.SelectedRow.Cells[4].Text;
+                txtArea.Text = gvReaders.SelectedRow.Cells[2].Text;
+                txtIp.Text = gvReaders.SelectedRow.Cells[3].Text;
                 ChangeVisible();
                 dal = new Dal();
                 DataTable dtAntennaAndReader;
