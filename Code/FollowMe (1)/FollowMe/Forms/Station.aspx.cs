@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,36 +14,30 @@ namespace FollowMe.Forms
     {
         DataTable dtReaders;
         DataTable dtStation;
-        Dal dal;
+        FollowMeDBEntities entity=new FollowMeDBEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            dal = new Dal();
-            if (!IsPostBack)
+           if (!IsPostBack)
             {
                 InitReaders();
-                dtReaders = dal.GetTable("Readers");
-                CheckBoxList1.DataSource = dtReaders;
-                CheckBoxList1.DataTextField = "Name";
+                 CheckBoxList1.DataSource =entity.ReaderSelect().ToArray();
+                 CheckBoxList1.DataTextField = "Name";
                 CheckBoxList1.DataValueField = "ReaderId";
                 CheckBoxList1.DataBind();
-                Session["dtReaders"] = dtReaders;
+                //Session["dtReaders"] = dtReaders;
             }
-            if (Session["dtReaders"] != null)
+            //if (Session["dtReaders"] != null)
             {
-                dtReaders = Session["dtReaders"] as DataTable;
+              //  dtReaders = Session["dtReaders"] as DataTable;
                 int i = 0;
-                foreach (DataRow row in dtReaders.Rows)
+                foreach (var row in entity.Readers.ToArray())
                 {
-                    List<SqlParameter> param = new List<SqlParameter>();
-                    param.Add(new SqlParameter("@Id", row["ReaderId"].ToString()));
-                    DataTable dt = new DataTable();
-                    dt = dal.GetTable("ActiveAntennas", param);
-                    CheckBoxList cb = new CheckBoxList();
-                    cb.DataSource = dt;
+                     CheckBoxList cb = new CheckBoxList();
+                    cb.DataSource =entity.ActiveAntennaSelect(row.ReaderId).ToArray();
                     cb.DataTextField = "ActiveAntennas";
                     cb.DataValueField = "ReaderId";
                     cb.DataBind();
-                    Session["dt"] = dt;
+                   // Session["dt"] = dt;
                     cb.RepeatDirection = RepeatDirection.Horizontal;
                     cb.ID = i.ToString();
                     phActiveAnt.Controls.Add(cb);
@@ -63,8 +57,7 @@ namespace FollowMe.Forms
         }
         private void InitReaders()
         {
-            dtStation = dal.GetTable("Station");
-            ddlReaders.DataSource = dtStation;
+            ddlReaders.DataSource = entity.Station.ToList();
             ddlReaders.DataTextField = "Name";
             ddlReaders.DataValueField = "StationId";
             ddlReaders.DataBind();
@@ -73,6 +66,7 @@ namespace FollowMe.Forms
             {
                 (((ListItem)itemReader).Selected) = false;
                 CheckBoxList cbl = ((CheckBoxList)(phActiveAnt.FindControl(i.ToString())));
+                if(cbl!=null)
                 foreach (var itemAnt in cbl.Items)
                 {
                     (((ListItem)itemAnt).Selected) = false;
@@ -102,20 +96,15 @@ namespace FollowMe.Forms
                         if ((((ListItem)itemAnt).Selected) == true)
                         {
 
-                            l = new List<SqlParameter>();
                             if (flag == true)
                             {
-                                l.Add(new SqlParameter("Name", txtName.Text));
-                                dal.WriteToDB("Station", l);
-                                l.Clear();
+                                entity.StationInsert(txtName.Text);
                                 flag = false;
                                 Written = true;
                             }
-                            l.Add(new SqlParameter("StationId",
-                                (int)dal.ReadScalar("select top 1 StationId from Station order by StationId desc")));
-                            l.Add(new SqlParameter("ReaderId", ((ListItem)itemReader).Value));
-                            l.Add(new SqlParameter("Antenna", ((ListItem)itemAnt).Text));
-                            dal.WriteToDB("ConnectionDetailsInStation", l);
+                            int StationId=entity.Station.OrderByDescending(s=>s.StationId).First().StationId+1;
+
+                            entity.ConnectionDetailsInStationInsert(StationId, Convert.ToInt32(((ListItem)itemReader).Value), Convert.ToInt32(((ListItem)itemAnt).Text));
                         }
                     }
                 }
@@ -149,22 +138,21 @@ namespace FollowMe.Forms
         {
             Session["edit"] = true;
             txtName.Text = ddlReaders.SelectedItem.Text;
-            ChangeVisible(); dal = new Dal();
+            ChangeVisible();
             DataTable dtAntennaAndReader;
-            List<SqlParameter> l = new List<SqlParameter>();
-            l.Add(new SqlParameter("StationId", Convert.ToInt32(ddlReaders.SelectedValue)));
-            dtAntennaAndReader = dal.GetTable("ConnectionDetailsInStation", l);
+            int stationId=Convert.ToInt32(ddlReaders.SelectedValue);
+            var AntennaAndReader = entity.ConnectionDetailsInStation.Where(s => s.StationId == stationId).ToList();
             int i = 0;
 
             foreach (var itemReader in CheckBoxList1.Items)
             {
-                if (dtAntennaAndReader.Rows[i]["StationId"].ToString() == ((ListItem)itemReader).Value)
+                if (AntennaAndReader[i].Antena.ToString() == ((ListItem)itemReader).Value)
                 {
                     (((ListItem)itemReader).Selected) = true;
                     CheckBoxList cbl = ((CheckBoxList)(phActiveAnt.FindControl(i.ToString())));
                     foreach (var itemAnt in cbl.Items)
                     {
-                        if (dtAntennaAndReader.Rows[i]["Antenna"].ToString() == ((ListItem)itemAnt).Text)
+                        if (AntennaAndReader[i].Antena.ToString() == ((ListItem)itemAnt).Text)
                         {
                             (((ListItem)itemAnt).Selected) = true;
                         }
@@ -187,12 +175,8 @@ namespace FollowMe.Forms
 
         protected void DeleteStation()
         {
-
-            dal = new Dal();
-            List<SqlParameter> l = new List<SqlParameter>();
-            l.Add(new SqlParameter("StationId", Session["ddlReaders.SelectedValue"]));
-            dal.DeleteInDB("Station", l);
-            InitReaders();
+            entity.StationDelete(Convert.ToInt32(Session["ddlReaders.SelectedValue"]));
+             InitReaders();
         }
 
         protected void ChangeVisible()
